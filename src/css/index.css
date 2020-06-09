@@ -1,0 +1,385 @@
+/* font */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Sans+KR:wght@300;400;500&display=swap');
+
+/* common css */
+
+.hidden {
+  display: none;
+}
+
+/* content css */
+
+body {
+  position: relative;
+  width: 100%;
+  font-family: 'Noto Sans KR', sans-serif;
+  overflow-x: hidden;
+}
+
+/* header */
+
+header {
+  position: fixed;
+  width: 100%;
+  height: 90px;
+  margin-left: 90px;
+  z-index: 30;
+}
+
+header .logo {
+  width: 200px;
+  height: 35px;
+  margin: 30px 0 0 50px;
+  background: url('../img/header/logo.png') no-repeat top;
+  cursor: pointer;
+}
+
+header .gnb {
+  color: #fff;
+  position: absolute;
+  bottom: 10px;
+  right: 140px;
+  height: 30px;
+  white-space: nowrap;
+  overflow: hidden;
+  font-weight: 300;
+}
+
+header .gnb li {
+  float: left;
+  font-size: 16px;
+}
+
+header .gnb li a {
+  border-bottom: 1px solid transparent;
+  padding-bottom: 3px;
+  transition: border 0.5s;
+}
+
+header .gnb li:hover a {
+  border-bottom: 2px solid #fff;
+}
+
+header .gnb li+li {
+  margin-left: 30px;
+}
+
+header .tnb {
+  color: #fff;
+  position: absolute;
+  top: 10px;
+  right: 180px;
+}
+
+header .tnb li {
+  float: left;
+  opacity: 0.7;
+  font-size: 13px;
+}
+
+header .tnb li a {
+  display: block;
+  padding: 5px 10px;
+}
+
+header .tnb li+li {
+  margin-left: 10px;
+}
+
+header .tnb li:nth-child(n+3) {
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+header .tnb li:nth-child(3) {
+  opacity: 1;
+}
+
+header .search {
+  position: absolute;
+  top: 10px;
+  right: 140px;
+  height: 30px;
+  width: 30px;
+  background: rgba(255, 255, 255, 0.2);
+  opacity: 0.5;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+header .search::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: url('../img/header/ic_search.png') no-repeat center;
+  width: 14px;
+  height: 14px;
+}
+
+/* .left-menu-bar */
+
+.left-menu-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 90px;
+  height: 100%;
+  color: #fff;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  z-index: 30;
+}
+
+.left-menu-bar .menu-btn {
+  position: relative;
+  width: 100%;
+  height: 90px;
+  background: rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+}
+
+.left-menu-bar .menu-btn span {
+  position: absolute;
+  top: 50%;
+  left: 30px;
+  width: 30px;
+  height: 1px;
+  background: #fff;
+}
+
+.left-menu-bar .menu-btn span::before,
+.left-menu-bar .menu-btn span::after {
+  content: '';
+  position: absolute;
+  left: -5px;
+  width: 30px;
+  height: 1px;
+  background: #fff;
+  transition: all 0.5s;
+}
+
+.left-menu-bar .menu-btn span::before {
+  top: -10px;
+  background: #fff;
+}
+
+.left-menu-bar .menu-btn span::after {
+  top: 10px;
+  background: #fff;
+}
+
+.left-menu-bar .menu-btn:hover span::before,
+.left-menu-bar .menu-btn:hover span::after {
+  left: 0;
+}
+
+.left-menu-bar .follow,
+.left-menu-bar .journal {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  line-height: 90px;
+  text-align: center;
+  white-space: nowrap;
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+  z-index: 10;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  font-weight: 600;
+}
+
+.left-menu-bar .follow {
+  bottom: 40%;
+  height: 20%;
+  padding-bottom: 20px;
+  letter-spacing: -1px;
+}
+
+.left-menu-bar .journal {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+}
+
+.left-menu-bar .follow span::after {
+  content: '';
+  position: absolute;
+  left: 30px;
+  bottom: 13px;
+  background: url('../img/header/cicon.svg') no-repeat center/cover;
+  width: 28px;
+  height: 28px;
+  line-height: 90px;
+  transition: all 0.3s;
+  opacity: 0.6;
+}
+
+.left-menu-bar .follow:hover span::after {
+  transform: rotate(45deg);
+  opacity: 1;
+}
+
+/* .right-menu-bar */
+
+.right-menu-bar {
+  position: fixed;
+  top: 45%;
+  right: 0;
+  width: 90px;
+  text-align: right;
+  font-size: 12px;
+  z-index: 30;
+}
+
+.right-menu-bar li {
+  position: relative;
+  color: #fff;
+  margin: 0 10px 10px 0;
+}
+
+.right-menu-bar li::after {
+  position: absolute;
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  top: 50%;
+  background: #fff;
+}
+
+.right-menu-bar li a {
+  margin-right: 10px;
+}
+
+.right-menu-bar li.active a {
+  position: relative;
+  padding: 2px 5px;
+  background: #fff;
+  color: #000;
+}
+
+/* .right-menu-bar li.active a::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  background: red;
+} */
+
+/* visual */
+
+.visual-slide {
+  position: relative;
+  width: 100%;
+  min-width: 100%;
+  height: 100vh;
+}
+
+.visual-slide .slide-area {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.visual-slide .slide-area ul {
+  width: 610%;
+  overflow: visible;
+  margin-left: -200%;
+}
+
+.visual-slide li {
+  position: relative;
+  float: left;
+  height: 100vh;
+}
+
+.visual-slide .slide-area li img {
+  width: 100vw;
+  height: 100vh;
+  max-height: 100vh;
+}
+
+@keyframes leftToRight {
+  0% {
+    left: 50%
+  }
+
+  50% {
+    left: 51%
+  }
+
+  100% {
+    left: 50%
+  }
+}
+
+.visual-slide .slide-area .text-area {
+  position: absolute;
+  top: 32%;
+  left: 50%;
+  color: #fff;
+  font-size: 18px;
+}
+
+.visual-slide .slide-area .type {
+  display: inline;
+  padding-bottom: 10px;
+  font-size: 19px;
+  border-bottom: 1px solid #fff;
+}
+
+.visual-slide .slide-area .title {
+  margin: 40px 0 30px;
+  font-size: 54px;
+  line-height: 1.2;
+}
+
+.visual-slide .slide-area .type {}
+
+.visual-slide .slide-area li:nth-child(1) a,
+.visual-slide .slide-area li:nth-child(2) a,
+.visual-slide .slide-area li:nth-child(6) a {
+  position: absolute;
+  top: 44%;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  background: url('../img/header/cicon.svg') no-repeat center;
+}
+
+.visual-slide .slide-area li a:hover {
+  animation: leftToRight 1s;
+  animation-direction: alternate;
+}
+
+.visual-slide .slide-tab {
+  position: absolute;
+  left: 220px;
+  bottom: 120px;
+  width: 450px;
+  height: 70px;
+}
+
+.visual-slide .slide-tab ul li {
+  width: 75px;
+  height: 100%;
+  font-size: 18px;
+  line-height: 70px;
+  color: rgba(255, 255, 255, 0.5);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.visual-slide .slide-tab ul li.active {
+  color: #fff;
+  font-size: 24px;
+  border-bottom: 1px solid #fff;
+  font-weight: bold;
+}
+
+/* .visual li a {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+} */
