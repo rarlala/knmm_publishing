@@ -192,8 +192,9 @@ header .search::after {
 }
 
 .left-menu-bar .follow {
+  position: absolute;
   bottom: 40%;
-  height: 20%;
+  height: 160px;
   padding-bottom: 20px;
   letter-spacing: -1px;
 }
@@ -216,9 +217,104 @@ header .search::after {
   opacity: 0.6;
 }
 
-.left-menu-bar .follow:hover span::after {
+.left-menu-bar .follow:hover span::after,
+.left-menu-bar .follow.active span::after {
   transform: rotate(45deg);
   opacity: 1;
+}
+
+.left-menu-bar .follow-container {
+  position: absolute;
+  bottom: 40%;
+  left: 0;
+  box-sizing: border-box;
+  width: 100vw;
+  height: 180px;
+  background: #222;
+  padding: 20px 0 0 90px;
+}
+
+.left-menu-bar .follow-container {
+  font-weight: bold;
+  letter-spacing: -1px;
+  font-size: 14px;
+}
+
+.left-menu-bar .follow-container .sns {
+  float: left;
+  padding-top: 55px;
+  margin-left: 55px;
+  width: 20%;
+}
+
+.left-menu-bar .follow-container .title {
+  margin-right: 30px;
+  line-height: 40px;
+}
+
+.left-menu-bar .follow-container .sns li {
+  float: left;
+  margin-right: 10px;
+}
+
+.left-menu-bar .follow-container .sns ul {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.left-menu-bar .follow-container .mailing-service {
+  float: left;
+  padding-top: 55px;
+  margin-left: 60px;
+  width: 70%;
+}
+
+.left-menu-bar .follow-container .mailing-service input,
+.left-menu-bar .follow-container .mailing-service button,
+.left-menu-bar .follow-container .mailing-service .checkbox-container {
+  height: 38px;
+  border: none;
+}
+
+.left-menu-bar .follow-container .mailing-service input[type=email] {
+  padding-left: 5px;
+  width: 220px;
+}
+
+.left-menu-bar .follow-container .mailing-service button {
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+}
+
+.left-menu-bar .follow-container form,
+.left-menu-bar .follow-container .checkbox-container {
+  display: inline-block;
+}
+
+.left-menu-bar .follow-container .checkbox-container {
+  position: relative;
+  box-sizing: border-box;
+  background: #ccc;
+  height: 38px;
+  vertical-align: middle;
+  padding: 7px 10px 0 50px;
+  color: #000;
+  font-weight: 400;
+}
+
+.left-menu-bar .follow-container .checkbox-container input[type=checkbox] {
+  position: absolute;
+  left: 20px;
+  top: 7px;
+  width: 18px;
+  height: 18px;
+}
+
+.left-menu-bar .follow-container .checkbox-container a {
+  margin-left: 20px;
+  padding-bottom: 1px;
+  border-bottom: 1px solid #000000;
 }
 
 /* .right-menu-bar */
@@ -230,7 +326,7 @@ header .search::after {
   width: 90px;
   text-align: right;
   font-size: 12px;
-  z-index: 30;
+  z-index: 20;
 }
 
 .right-menu-bar li {
@@ -269,6 +365,38 @@ header .search::after {
   background: red;
 } */
 
+/* scroll down */
+
+@keyframes scrollDown {
+  0% {
+    bottom: 20px
+  }
+
+  50% {
+    bottom: 15px
+  }
+
+  100% {
+    bottom: 20px
+  }
+}
+
+.btn-scroll-down {
+  position: absolute;
+  bottom: 20px;
+  left: 45%;
+  text-align: center;
+  z-index: 10;
+  font-size: 14px;
+  font-weight: lighter;
+  color: #fff;
+  animation: scrollDown 2s infinite;
+}
+
+.btn-scroll-down i {
+  font-size: 24px;
+}
+
 /* visual */
 
 .visual-slide {
@@ -286,7 +414,7 @@ header .search::after {
 .visual-slide .slide-area ul {
   width: 610%;
   overflow: visible;
-  margin-left: -200%;
+  /* margin-left: 0; */
 }
 
 .visual-slide li {
@@ -336,13 +464,30 @@ header .search::after {
   line-height: 1.2;
 }
 
-.visual-slide .slide-area .type {}
-
 .visual-slide .slide-area li:nth-child(1) a,
 .visual-slide .slide-area li:nth-child(2) a,
 .visual-slide .slide-area li:nth-child(6) a {
   position: absolute;
   top: 44%;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  background: url('../img/header/cicon.svg') no-repeat center;
+}
+
+.visual-slide .slide-area li:nth-child(3) a {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  background: url('../img/header/cicon.svg') no-repeat center;
+}
+
+.visual-slide .slide-area li:nth-child(4) a,
+.visual-slide .slide-area li:nth-child(5) a {
+  position: absolute;
+  top: 65%;
   left: 50%;
   width: 30px;
   height: 30px;
@@ -377,9 +522,3 @@ header .search::after {
   border-bottom: 1px solid #fff;
   font-weight: bold;
 }
-
-/* .visual li a {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-} */
