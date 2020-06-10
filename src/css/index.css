@@ -382,7 +382,7 @@ header .search::after {
 }
 
 .btn-scroll-down {
-  position: absolute;
+  position: fixed;
   bottom: 20px;
   left: 45%;
   text-align: center;
@@ -520,5 +520,134 @@ header .search::after {
   color: #fff;
   font-size: 24px;
   border-bottom: 1px solid #fff;
+  font-weight: bold;
+}
+
+/* plan */
+
+.plan {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.plan .content-slide-wrap {
+  width: 100%;
+  overflow: hidden;
+}
+
+.plan .content {
+  width: 500%;
+  height: 100vh;
+  /* margin-left: -100%; */
+  white-space: nowrap;
+}
+
+.plan .content li {
+  width: 100vw;
+  float: left;
+  box-sizing: border-box;
+  padding: 90px 90px 0 90px;
+  height: 100%;
+}
+
+.plan .content .left,
+.plan .content .right {
+  float: left;
+}
+
+.plan .content .left {
+  margin: 30px 50px 0 40px;
+  width: 30%;
+}
+
+.plan .content .right {
+  position: relative;
+  width: calc(69% - 90px);
+  height: 85%;
+  left: -50px;
+  background: red;
+}
+
+.plan .content li:nth-child(1) .right {
+  background: url(../img/plan/plan01.jpg) no-repeat top/contain;
+}
+
+.plan .content li:nth-child(2) .right {
+  background: url(../img/plan/plan02.jpg) no-repeat left/contain;
+}
+
+.plan .content li:nth-child(3) .right {
+  background: url(../img/plan/plan03.jpg) no-repeat top/cover;
+}
+
+.plan .content li:nth-child(4) .right {
+  background: url(../img/plan/plan04.jpg) no-repeat top/cover;
+}
+
+.plan .type {
+  display: inline;
+  padding-bottom: 10px;
+  font-size: 20px;
+  color: #909090;
+  border-bottom: 1px solid #000;
+}
+
+.plan .title {
+  margin: 30px 0;
+  font-size: 52px;
+  line-height: 1.2;
+}
+
+.plan .date {
+  margin: 30px 0 100px;
+  font-size: 24px;
+  color: #909090;
+}
+
+.plan .text {
+  margin: 30px 0 100px;
+  font-size: 24px;
+  color: #909090;
+}
+
+.plan .button {
+  position: relative;
+  display: inline-block;
+  width: 200px;
+  padding: 15px 20px;
+  color: #909090;
+  border: 1px solid #909090;
+}
+
+.plan .button::after {
+  content: '';
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: url('../img/common/ic_arrow4.png') no-repeat center;
+  width: 25px;
+  height: 9px;
+}
+
+.plan .listNum {
+  position: absolute;
+  bottom: 30px;
+  right: 150px;
+}
+
+.plan .listNum li {
+  float: left;
+  color: #909090;
+  padding: 20px;
+  border-bottom: 1px solid rgba(34, 34, 34, 0.4);
+  cursor: pointer;
+}
+
+.plan .listNum li.active {
+  color: #000;
+  border-bottom: 1px solid #000;
   font-weight: bold;
 }
