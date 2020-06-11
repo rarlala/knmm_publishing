@@ -752,7 +752,8 @@ header .search::after {
 }
 
 .have-item h2,
-.alert h2 {
+.alert h2,
+.info h2 {
   display: inline;
   border-bottom: 1px solid #000;
   padding-bottom: 2px;
@@ -815,7 +816,8 @@ header .search::after {
   text-align: center;
 }
 
-.alert .inner {
+.alert .inner,
+.info .inner {
   width: 80%;
   padding: 20px 0;
   margin: 0 auto;
@@ -829,12 +831,15 @@ header .search::after {
 }
 
 .alert .left,
-.alert .right {
+.alert .right,
+.info .left,
+.info .right {
   float: left;
   width: 46%;
 }
 
-.alert .left {
+.alert .left,
+.info .left {
   margin-right: 8%;
 }
 
@@ -1019,4 +1024,143 @@ header .search::after {
 
 .popup .img-slide-button li+li {
   margin-left: 5.5px;
+}
+
+/* info */
+
+.info {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100vh;
+  padding: 90px 0;
+  text-align: center;
+  background: #515151;
+  color: #fff;
+}
+
+.info h2 {
+  border-bottom: 1px solid #fff;
+}
+
+.info .title {
+  position: relative;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 10px;
+  font-weight: 500;
+  padding-left: 40px;
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+.info .inner div div:first-child {
+  height: 250px;
+}
+
+.info .title::before {
+  position: absolute;
+  left: 0;
+  bottom: 30%;
+  content: '';
+  background: url('../img/info/ic_g1.png') no-repeat center;
+  width: 22px;
+  height: 22px;
+}
+
+.info .title.two::before {
+  background: url('../img/info/ic_g3.png') no-repeat center;
+  width: 30px;
+  height: 21px;
+}
+
+.info .title.three::before {
+  background: url('../img/info/ic_g2.png') no-repeat center;
+  width: 23px;
+  height: 21px;
+}
+
+.info .title.four::before {
+  background: url('../img/info/ic_g4.png') no-repeat center;
+  width: 30px;
+  height: 21px;
+}
+
+.info .inner .left div:nth-child(2) .text {
+  padding-left: 40px;
+}
+
+.info .inner div div .text {
+  overflow: hidden;
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.info .inner div div .text p {
+  float: left;
+  width: 40%;
+  box-sizing: border-box;
+  padding: 0 15px 0 40px;
+  margin: 10 0;
+}
+
+.info .inner div div .text p:first-child {
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.info .list li {
+  position: relative;
+  word-break: keep-all;
+  padding-left: 20px;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.info .list li::before {
+  content: 'ㆍ';
+  position: absolute;
+  top: 0;
+  left: 5px;
+}
+
+.info .btn-area {
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.info .button {
+  border: 1px solid #909090;
+  margin-right: 5px;
+}
+
+.info .button:hover {
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+.info .button::before {
+  content: '';
+  position: absolute;
+  left: 30px;
+  background: url('../img/info/ic_q1.png') no-repeat center;
+  width: 34px;
+  height: 22px;
+}
+
+.info .button:nth-child(2)::before {
+  background: url('../img/info/ic_q2.png') no-repeat center;
+  width: 23px;
+  height: 23px;
+}
+
+.info .button:nth-child(2)::before {
+  background: url('../img/info/ic_q3.png') no-repeat center;
+  width: 19px;
+  height: 24px;
+}
+
+.info .button::after {
+  background: url('../img/common/ic_arrow3.png') no-repeat center;
 }
