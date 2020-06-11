@@ -805,7 +805,7 @@ header .search::after {
   color: #909090;
 }
 
-/* have-item */
+/* alert */
 
 .alert {
   box-sizing: border-box;
@@ -813,7 +813,6 @@ header .search::after {
   height: 100vh;
   padding: 90px 0;
   text-align: center;
-  background: pink;
 }
 
 .alert .inner {
@@ -824,13 +823,200 @@ header .search::after {
   text-align: left;
 }
 
+.alert h3 {
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
 .alert .left,
 .alert .right {
   float: left;
-  width: 48%;
-  background: red;
+  width: 46%;
 }
 
 .alert .left {
-  margin-right: 4%;
+  margin-right: 8%;
+}
+
+/* board */
+.alert .board {
+  position: relative;
+  height: 350px;
+  margin-bottom: 50px;
+}
+
+.alert .tab-title {
+  display: inline-block;
+  width: 120px;
+  padding: 10px 0;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 16px;
+  border: 1px solid #222;
+}
+
+.alert .board .tab ul {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+.alert .board .tab.active ul {
+  display: inline-block;
+}
+
+.alert .board .tab .tab-title {
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.alert .board .tab.active .tab-title {
+  background: #222;
+  color: #ccc;
+}
+
+.alert .board .tab-title:hover {
+  background: #222;
+  color: #ccc;
+}
+
+.alert .board .tab .tab-title {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.alert .board .tab2 .tab-title {
+  left: 120px;
+}
+
+.alert .board .tab3 .tab-title {
+  left: 240px;
+}
+
+.alert .board .tab4 .tab-title {
+  left: 360px;
+}
+
+.alert .board .tab ul {
+  position: absolute;
+  top: 45px;
+  width: 100%;
+  border-top: 1px solid #000;
+  padding-top: 20px;
+}
+
+.alert .board .tab ul li {
+  width: 100%;
+  height: 46px;
+  line-height: 46px;
+  font-size: 16px;
+  border-bottom: 1px solid #ccc;
+}
+
+.alert .board .tab ul li.notice-icon {
+  font-weight: 500;
+}
+
+.alert .board .tab ul li.notice-icon::before {
+  content: '공지';
+  width: 20px;
+  padding: 2px 5px;
+  border: 1px solid #222;
+  font-size: 14px;
+}
+
+.alert .board .tab ul li .date {
+  float: right;
+  margin-right: 10px;
+  font-size: 14px;
+  color: #222;
+}
+
+/* visual-news, .photo-gallery */
+
+.alert .visual-news,
+.alert .photo-gallery {
+  height: 200px;
+}
+
+.alert .visual-news ul,
+.alert .photo-gallery ul {
+  width: 100%;
+}
+
+.alert .visual-news ul li,
+.alert .photo-gallery ul li {
+  float: left;
+  width: 30%;
+}
+
+.alert .visual-news ul li+li,
+.alert .photo-gallery ul li+li {
+  margin-left: 5%;
+}
+
+.alert .visual-news img {
+  width: 80%;
+}
+
+.alert .photo-gallery img {
+  width: 100%;
+  min-height: 135px;
+}
+
+.alert .visual-news .text,
+.alert .photo-gallery .text {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* popup */
+
+.popup {
+  position: relative;
+  height: 350px;
+  margin-bottom: 50px;
+  /* overflow: hidden; */
+}
+
+.popup ul {
+  width: 600%;
+}
+
+.popup ul li {
+  float: left;
+}
+
+.popup ul li img {
+  width: 100%;
+  float: left;
+}
+
+.popup .img-slide-button {
+  position: absolute;
+  top: 10px;
+  right: 0;
+  width: 100px;
+  height: 20px;
+}
+
+.popup .img-slide-button li {
+  width: 10px;
+  height: 10px;
+  border: 1px solid #000;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.popup .img-slide-button li.active {
+  background: #000;
+}
+
+.popup .img-slide-button li+li {
+  margin-left: 5.5px;
 }
