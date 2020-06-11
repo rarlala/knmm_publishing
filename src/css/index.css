@@ -1164,3 +1164,112 @@ header .search::after {
 .info .button::after {
   background: url('../img/common/ic_arrow3.png') no-repeat center;
 }
+
+/* footer */
+
+footer .top {
+  border-bottom: 1px solid #ccc;
+}
+
+footer .inner {
+  width: 85%;
+  margin: 0 auto;
+}
+
+footer .top ul {
+  overflow: hidden;
+}
+
+footer .top li {
+  float: left;
+  width: 14.2%;
+  padding: 30px 0;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+footer .bottom {
+  padding: 50px 0 30px;
+  overflow: hidden;
+}
+
+footer .bottom .left {
+  float: left;
+  color: #222;
+  font-weight: 100;
+}
+
+footer .bottom .left {
+  margin-top: 10px;
+  margin-right: 100px;
+}
+
+footer .bottom .left address {
+  position: relative;
+  display: inline;
+  margin-right: 20px;
+}
+
+footer .bottom .left address::after {
+  position: absolute;
+  right: -10px;
+  content: '|';
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 14px;
+}
+
+footer .bottom .right {
+  position: relative;
+  right: -50px;
+  float: right;
+  color: #222;
+  font-weight: 100;
+}
+
+footer .bottom .right li {
+  position: relative;
+  float: left;
+}
+
+footer .bottom .right .select-box-area li+li {
+  margin-left: 20px;
+}
+
+footer .bottom .right .select-box-area,
+footer .bottom .right .etc-menu {
+  overflow: hidden;
+  width: 100%;
+}
+
+footer .bottom .right .select-box-area li {
+  float: left;
+  width: 30%;
+  margin-bottom: 10px;
+}
+
+footer .bottom .right .select-box-area li select {
+  width: 100%;
+  padding: 5px;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+footer .bottom .right .etc-menu li+li {
+  margin-left: 37px;
+}
+
+footer .bottom .right .etc-menu li::before {
+  position: absolute;
+  right: -20px;
+  content: '|';
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 14px;
+}
+
+footer .bottom .right li:last-child:before {
+  content: '';
+}
+
+footer .bottom .left .copy {
+  color: rgba(0, 0, 0, 0.4);
+  font-size: 14px;
+}
