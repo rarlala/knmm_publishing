@@ -35,6 +35,10 @@ header .logo {
   cursor: pointer;
 }
 
+header.active .logo {
+  background: url('../img/header/logo.png') no-repeat bottom;
+}
+
 header .gnb {
   color: #fff;
   position: absolute;
@@ -46,19 +50,27 @@ header .gnb {
   font-weight: 300;
 }
 
+header.active .gnb {
+  color: #000;
+}
+
 header .gnb li {
   float: left;
   font-size: 16px;
 }
 
 header .gnb li a {
-  border-bottom: 1px solid transparent;
   padding-bottom: 3px;
+  border-bottom: 2px solid transparent;
   transition: border 0.5s;
 }
 
 header .gnb li:hover a {
   border-bottom: 2px solid #fff;
+}
+
+header.active .gnb li:hover a {
+  border-bottom: 2px solid #222;
 }
 
 header .gnb li+li {
@@ -70,6 +82,10 @@ header .tnb {
   position: absolute;
   top: 10px;
   right: 180px;
+}
+
+header.active .tnb {
+  color: #222;
 }
 
 header .tnb li {
@@ -91,6 +107,10 @@ header .tnb li:nth-child(n+3) {
   border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
+header.active .tnb li:nth-child(n+3) {
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
 header .tnb li:nth-child(3) {
   opacity: 1;
 }
@@ -105,6 +125,10 @@ header .search {
   opacity: 0.5;
   border-radius: 50%;
   cursor: pointer;
+}
+
+header.active .search {
+  background: rgba(0, 0, 0, 0.2);
 }
 
 header .search::after {
@@ -131,6 +155,11 @@ header .search::after {
   z-index: 30;
 }
 
+.left-menu-bar.active {
+  color: #222;
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
+}
+
 .left-menu-bar .menu-btn {
   position: relative;
   width: 100%;
@@ -148,6 +177,10 @@ header .search::after {
   background: #fff;
 }
 
+.left-menu-bar.active .menu-btn span {
+  background: #000;
+}
+
 .left-menu-bar .menu-btn span::before,
 .left-menu-bar .menu-btn span::after {
   content: '';
@@ -157,6 +190,11 @@ header .search::after {
   height: 1px;
   background: #fff;
   transition: all 0.5s;
+}
+
+.left-menu-bar.active .menu-btn span::before,
+.left-menu-bar.active .menu-btn span::after {
+  background: #000;
 }
 
 .left-menu-bar .menu-btn span::before {
@@ -191,6 +229,11 @@ header .search::after {
   font-weight: 600;
 }
 
+.left-menu-bar.active .follow,
+.left-menu-bar.active .journal {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
 .left-menu-bar .follow {
   position: absolute;
   bottom: 40%;
@@ -215,6 +258,10 @@ header .search::after {
   line-height: 90px;
   transition: all 0.3s;
   opacity: 0.6;
+}
+
+.left-menu-bar.active .follow span::after {
+  background: url('../img/header/cicon_b.svg') no-repeat center/cover;
 }
 
 .left-menu-bar .follow:hover span::after,
@@ -335,6 +382,10 @@ header .search::after {
   margin: 0 10px 10px 0;
 }
 
+.right-menu-bar.active li {
+  color: #000;
+}
+
 .right-menu-bar li::after {
   position: absolute;
   content: '';
@@ -343,6 +394,10 @@ header .search::after {
   border-radius: 50%;
   top: 50%;
   background: #fff;
+}
+
+.right-menu-bar.active li::after {
+  background: #222;
 }
 
 .right-menu-bar li a {
@@ -984,13 +1039,14 @@ header .search::after {
 
 .popup {
   position: relative;
-  height: 350px;
-  margin-bottom: 50px;
-  /* overflow: hidden; */
+  width: 100%;
+  margin-bottom: 20px;
 }
 
 .popup ul {
   width: 600%;
+  height: 340px;
+  overflow: hidden;
 }
 
 .popup ul li {
@@ -998,7 +1054,7 @@ header .search::after {
 }
 
 .popup ul li img {
-  width: 100%;
+  max-width: 100%;
   float: left;
 }
 
@@ -1201,7 +1257,6 @@ footer .bottom .left {
 
 footer .bottom .left {
   margin-top: 10px;
-  margin-right: 100px;
 }
 
 footer .bottom .left address {

@@ -4,10 +4,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="./src/img/common/favicons.png">
   <title>국립해양박물관</title>
   <link rel="stylesheet" href="./src/css/reset.css">
   <link rel="stylesheet" href="./src/font/css/all.min.css">
   <link rel="stylesheet" href="./src/css/index.css">
+  <script src="./src/js/jquery-3.3.1.min.js"></script>
+  <script src="./src/js/index.js"></script>
 </head>
 
 <body>
@@ -46,7 +49,7 @@
     <div class="menu-btn">
       <a><span></span><span class="blind">사이트맵 열기</span></a>
     </div>
-    <a class="follow" href="#">FOLLOW US<span></span></a>
+    <a class="follow" href="javascript:;">FOLLOW US<span></span></a>
     <div class="follow-container hidden">
       <div class="sns">
         <span class="title">SNS</span>
@@ -81,12 +84,12 @@
 
   <div class="right-menu-bar">
     <ul>
-      <li><a href="#">기획전시</a></li>
-      <li><a href="#">교육문화</a></li>
-      <li><a href="#">주요소장품</a></li>
-      <li><a href="#">알림</a></li>
-      <li><a href="#">관람안내</a></li>
-      <li class="active"><a href="#">▲TOP</a></li>
+      <li><a href="#plan">기획전시</a></li>
+      <li><a href="#edu">교육문화</a></li>
+      <li><a href="#item">주요소장품</a></li>
+      <li><a href="#alert">알림</a></li>
+      <li><a href="#info">관람안내</a></li>
+      <li class="active"><a href="#top">▲TOP</a></li>
     </ul>
   </div>
 
@@ -95,7 +98,7 @@
     <i class="fas fa-chevron-circle-down"></i>
   </div>
 
-  <section class="visual-slide">
+  <section class="visual-slide" id="top">
     <h2 class="blind">안내 슬라이드</h2>
     <div class="slide-area">
       <ul>
@@ -148,7 +151,7 @@
     </div>
   </section>
 
-  <section class="plan">
+  <section class="plan" id="plan">
     <div class="content-slide-wrap">
       <ul class="content">
         <li>
@@ -203,7 +206,7 @@
   </section>
 
 
-  <section class="online-edu">
+  <section class="online-edu" id="edu">
     <div class="slide-area">
       <ul class="slide-content">
         <li>
@@ -235,7 +238,7 @@
     </ul>
   </section>
 
-  <section class="have-item">
+  <section class="have-item" id="item">
     <h2>주요 소장품</h2>
     <div class="inner">
       <div class="line-one">
@@ -274,7 +277,7 @@
     </div>
   </section>
 
-  <section class="alert">
+  <section class="alert" id="alert">
     <h2>알림</h2>
     <div class="inner">
       <div class="left">
@@ -497,7 +500,7 @@
     </div>
   </section>
 
-  <section class="info">
+  <section class="info" id="info">
     <h2>관람 안내</h2>
     <div class="inner">
       <div class="left">
