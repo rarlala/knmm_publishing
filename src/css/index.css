@@ -17,6 +17,26 @@ body {
   overflow-x: hidden;
 }
 
+/* 본문 바로가기 */
+#skip-nav {
+  position: fixed;
+  left: 0;
+  top: -41px;
+  width: 100%;
+  line-height: 40px;
+  text-align: center;
+  font-size: 16px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #ffffff;
+  border-bottom: 1px solid #ffffff;
+  z-index: 10000;
+  transition: top 0.3s;
+}
+
+#skip-nav:focus {
+  top: 0;
+}
+
 /* header */
 
 header {
@@ -60,17 +80,25 @@ header .gnb li {
 }
 
 header .gnb li a {
+  position: relative;
   padding-bottom: 3px;
-  border-bottom: 2px solid transparent;
-  transition: border 0.5s;
 }
 
-header .gnb li:hover a {
-  border-bottom: 2px solid #fff;
+header .gnb li a::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 0);
+  width: 0;
+  height: 1px;
+  background: #fff;
+  transition: width 0.3s;
 }
 
-header.active .gnb li:hover a {
-  border-bottom: 2px solid #222;
+header .gnb li:hover a::after,
+header .gnb li:focus a::after {
+  width: 100%;
 }
 
 header .gnb li+li {
@@ -88,31 +116,52 @@ header.active .tnb {
   color: #222;
 }
 
-header .tnb li {
+header .tnb>li {
   float: left;
   opacity: 0.7;
   font-size: 13px;
 }
 
-header .tnb li a {
+header .tnb>li a {
   display: block;
   padding: 5px 10px;
 }
 
-header .tnb li+li {
+header .tnb>li+li {
   margin-left: 10px;
 }
 
-header .tnb li:nth-child(n+3) {
+header .tnb>li:nth-child(n+3) {
   border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
-header.active .tnb li:nth-child(n+3) {
+header.active .tnb>li:nth-child(n+3) {
   border: 1px solid rgba(0, 0, 0, 0.5);
 }
 
-header .tnb li:nth-child(3) {
+header .tnb>li:nth-child(3) {
   opacity: 1;
+}
+
+header .tnb .language .select-language-list {
+  border: 1px solid #222;
+  display: none;
+}
+
+header .tnb .language.on .select-language-list {
+  display: block;
+}
+
+header .tnb .language .select-language-list li {
+  padding: 5px 5px;
+  border-top: 1px solid #fff;
+  background: #fff;
+  color: #222;
+  font-size: 13px;
+}
+
+header .tnb .language .select-language-list li+li {
+  border-top: 1px solid #222;
 }
 
 header .search {
@@ -289,9 +338,11 @@ header .search::after {
 
 .left-menu-bar .follow-container .sns {
   float: left;
-  padding-top: 55px;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
   margin-left: 55px;
-  width: 20%;
+  width: 22%;
 }
 
 .left-menu-bar .follow-container .title {
@@ -311,8 +362,9 @@ header .search::after {
 
 .left-menu-bar .follow-container .mailing-service {
   float: left;
-  padding-top: 55px;
-  margin-left: 60px;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
   width: 70%;
 }
 
@@ -467,9 +519,8 @@ header .search::after {
 }
 
 .visual-slide .slide-area ul {
-  width: 610%;
-  overflow: visible;
-  /* margin-left: 0; */
+  width: 100%;
+  overflow: hidden;
 }
 
 .visual-slide li {
@@ -478,7 +529,12 @@ header .search::after {
   height: 100vh;
 }
 
+.visual-slide .slide-area li.on img {
+  display: block;
+}
+
 .visual-slide .slide-area li img {
+  display: none;
   width: 100vw;
   height: 100vh;
   max-height: 100vh;
@@ -664,7 +720,7 @@ header .search::after {
 
 .online-edu .text,
 .plan .text {
-  margin: 30px 0 100px;
+  margin: 30px 0;
   font-size: 24px;
   color: #909090;
 }
@@ -764,7 +820,7 @@ header .search::after {
 
 .online-edu .slide-content li .right {
   width: 40vw;
-  padding-top: 100px;
+  padding-top: 50px;
 }
 
 .online-edu .slide-content li:nth-child(1) .left::after {
@@ -802,7 +858,7 @@ header .search::after {
   box-sizing: border-box;
   width: 100%;
   height: 100vh;
-  padding: 90px 0;
+  padding-top: 15px;
   text-align: center;
 }
 
@@ -816,17 +872,22 @@ header .search::after {
 }
 
 .have-item .inner {
+  box-sizing: border-box;
   width: 80%;
-  padding: 20px 0;
-  margin: 0 auto;
+  height: 75vh;
+  margin: 40px auto 5px;
   overflow: hidden;
+}
+
+.have-item .inner div div img {
+  width: 100%;
 }
 
 .have-item .inner .line-one,
 .have-item .inner .line-two,
 .have-item .inner .line-three {
   float: left;
-  width: 25%;
+  width: 26%;
   height: 100%;
   text-align: left;
 }
@@ -837,15 +898,11 @@ header .search::after {
 
 .have-item .inner .line-one div:first-child,
 .have-item .inner .line-three div:first-child {
-  margin-bottom: 30px;
+  margin-bottom: 5px;
 }
 
 .have-item .inner .line-two {
-  width: 40%;
-}
-
-.have-item .inner .line-two img {
-  width: 100%;
+  width: 38%;
 }
 
 .have-item .inner .line-three {
@@ -867,14 +924,14 @@ header .search::after {
   box-sizing: border-box;
   width: 100%;
   height: 100vh;
-  padding: 90px 0;
+  padding-top: 15px;
   text-align: center;
 }
 
 .alert .inner,
 .info .inner {
   width: 80%;
-  padding: 20px 0;
+  padding: 30px 0 0;
   margin: 0 auto;
   overflow: hidden;
   text-align: left;
@@ -890,29 +947,30 @@ header .search::after {
 .info .left,
 .info .right {
   float: left;
-  width: 46%;
+  width: 45.7%;
 }
 
 .alert .left,
 .info .left {
-  margin-right: 8%;
+  margin-right: 7%;
 }
 
 /* board */
 .alert .board {
   position: relative;
-  height: 350px;
-  margin-bottom: 50px;
+  height: 340px;
+  margin-bottom: 15px;
 }
 
 .alert .tab-title {
   display: inline-block;
-  width: 120px;
+  width: 115px;
   padding: 10px 0;
   text-align: center;
   margin-bottom: 20px;
   font-size: 16px;
-  border: 1px solid #222;
+  border: 1px solid #222222;
+  border-bottom: none;
 }
 
 .alert .board .tab ul {
@@ -949,15 +1007,15 @@ header .search::after {
 }
 
 .alert .board .tab2 .tab-title {
-  left: 120px;
+  left: 115px;
 }
 
 .alert .board .tab3 .tab-title {
-  left: 240px;
+  left: 230px;
 }
 
 .alert .board .tab4 .tab-title {
-  left: 360px;
+  left: 345px;
 }
 
 .alert .board .tab ul {
@@ -965,7 +1023,7 @@ header .search::after {
   top: 45px;
   width: 100%;
   border-top: 1px solid #000;
-  padding-top: 20px;
+  padding-top: 10px;
 }
 
 .alert .board .tab ul li {
@@ -1002,6 +1060,10 @@ header .search::after {
   height: 200px;
 }
 
+.alert .photo-gallery {
+  padding-top: 18px;
+}
+
 .alert .visual-news ul,
 .alert .photo-gallery ul {
   width: 100%;
@@ -1024,7 +1086,7 @@ header .search::after {
 
 .alert .photo-gallery img {
   width: 100%;
-  min-height: 135px;
+  min-height: 110px;
 }
 
 .alert .visual-news .text,
@@ -1044,8 +1106,8 @@ header .search::after {
 }
 
 .popup ul {
-  width: 600%;
-  height: 340px;
+  width: 100%;
+  height: 280px;
   overflow: hidden;
 }
 
@@ -1089,7 +1151,7 @@ header .search::after {
   box-sizing: border-box;
   width: 100%;
   height: 100vh;
-  padding: 90px 0;
+  padding-top: 15px;
   text-align: center;
   background: #515151;
   color: #fff;
@@ -1097,6 +1159,11 @@ header .search::after {
 
 .info h2 {
   border-bottom: 1px solid #fff;
+  margin-bottom: 50px;
+}
+
+.info .inner {
+  margin-top: 40px;
 }
 
 .info .title {
@@ -1110,7 +1177,7 @@ header .search::after {
 }
 
 .info .inner div div:first-child {
-  height: 250px;
+  height: 260px;
 }
 
 .info .title::before {
@@ -1180,8 +1247,9 @@ header .search::after {
 }
 
 .info .btn-area {
+  width: 100%;
   position: absolute;
-  bottom: 100px;
+  bottom: 50px;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -1253,21 +1321,19 @@ footer .bottom .left {
   float: left;
   color: #222;
   font-weight: 100;
-}
-
-footer .bottom .left {
+  width: 45%;
   margin-top: 10px;
 }
 
 footer .bottom .left address {
   position: relative;
   display: inline;
-  margin-right: 20px;
+  margin-right: 10px;
 }
 
 footer .bottom .left address::after {
   position: absolute;
-  right: -10px;
+  right: -5px;
   content: '|';
   color: rgba(0, 0, 0, 0.6);
   font-size: 14px;
@@ -1279,6 +1345,7 @@ footer .bottom .right {
   float: right;
   color: #222;
   font-weight: 100;
+  width: 55%;
 }
 
 footer .bottom .right li {
@@ -1287,7 +1354,7 @@ footer .bottom .right li {
 }
 
 footer .bottom .right .select-box-area li+li {
-  margin-left: 20px;
+  margin-left: 10px;
 }
 
 footer .bottom .right .select-box-area,
@@ -1308,16 +1375,20 @@ footer .bottom .right .select-box-area li select {
   color: rgba(0, 0, 0, 0.4);
 }
 
+footer .bottom .right .etc-menu li {
+  font-size: 14px;
+}
+
 footer .bottom .right .etc-menu li+li {
-  margin-left: 37px;
+  margin-left: 10px;
 }
 
 footer .bottom .right .etc-menu li::before {
   position: absolute;
-  right: -20px;
+  right: -5px;
   content: '|';
   color: rgba(0, 0, 0, 0.6);
-  font-size: 14px;
+  font-size: 12px;
 }
 
 footer .bottom .right li:last-child:before {
@@ -1326,5 +1397,5 @@ footer .bottom .right li:last-child:before {
 
 footer .bottom .left .copy {
   color: rgba(0, 0, 0, 0.4);
-  font-size: 14px;
+  font-size: 12px;
 }

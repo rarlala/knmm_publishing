@@ -3,18 +3,24 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="rarlala, 정수지" />
+  <meta name="apple-mobile-web-app-title" content="국립해양박물관" />
+  <meta name="description" content="국립해양박물관 웹사이트" />
   <link rel="shortcut icon" href="./src/img/common/favicons.png">
   <title>국립해양박물관</title>
   <link rel="stylesheet" href="./src/css/reset.css">
   <link rel="stylesheet" href="./src/font/css/all.min.css">
   <link rel="stylesheet" href="./src/css/index.css">
   <script src="./src/js/jquery-3.3.1.min.js"></script>
+  <script src="./src/js/common.js"></script>
   <script src="./src/js/index.js"></script>
 </head>
 
 <body>
-  <header>
+  <a href="#main" id="skip-nav">본문 바로가기</a>
+  <header id="header">
     <h1 class="logo">
       <p class="blind">국립해양박물관 로고</span>
     </h1>
@@ -33,7 +39,13 @@
       <li><a href="#">로그인</a></li>
       <li><a href="#">회원가입</a></li>
       <li><a href="https://lib.knmm.or.kr/">해양도서관</a></li>
-      <li><a href="#">Language<i class="fas fa-chevron-down"></i></a></li>
+      <li class="language"><a href="#">Language <i class="fas fa-chevron-down"></i></a>
+        <ul class="select-language-list">
+          <li>ENGLISH</li>
+          <li>CHINESS</li>
+          <li>JAPANESS</li>
+        </ul>
+      </li>
     </ul>
 
     <div class="search">
@@ -98,458 +110,462 @@
     <i class="fas fa-chevron-circle-down"></i>
   </div>
 
-  <section class="visual-slide" id="top">
-    <h2 class="blind">안내 슬라이드</h2>
-    <div class="slide-area">
-      <ul>
-        <li>
-          <img src="./src/img/visual/visual01.png" alt="">
-          <a href="#"></a>
-        </li>
-        <li>
-          <img src="./src/img/visual/visual02.png" alt=""><a href="#"></a></li>
-        <li>
-          <img src="./src/img/visual/visual03.jpg" alt="">
-          <div class="text-area">
-            <p class="type">KNMM</p>
-            <p class="title">국립해양박물관의 문은<br>언제나 바다로</p>
-            <p>Korea National Maritime Museum</p>
+  <main id="main">
+    <section class="visual-slide" id="top">
+      <h2 class="blind">안내 슬라이드</h2>
+      <div class="slide-area">
+        <ul>
+          <li class="on">
+            <img src="./src/img/visual/visual01.png" alt="국립 박물관 생활 속 거리두기 관람안내 온라인 사전 예약제 실시 국립 해양박물관은 생활 속 거리두기를 위해 온라인 사전예약제를 실시합니다.
+              전시 관람은 1일 4회 운영되며 2시간당 200명, 개별(5명 이하)로 관람 가능합니다. 방문 1일 전까지 홈페이지에서 예약해주세요.(회당 200명 선착순)">
+            <a href="#"><span class="hidden">더보기</span></a>
+          </li>
+          <li>
+            <img src="./src/img/visual/visual02.png"
+              alt="2020 국립해양박물관 기획전시 바다에서 바라본 '제주바당' 2020.04.28-2020.07.05 공동 주최:국립해양박물관, 국립제주박물관, 제주대학교 박물관"><a
+              href=" #"></a></li>
+          <li>
+            <img src="./src/img/visual/visual03.jpg" alt="">
+            <div class="text-area">
+              <p class="type">KNMM</p>
+              <p class="title">국립해양박물관의 문은<br>언제나 바다로</p>
+              <p>Korea National Maritime Museum</p>
+            </div>
+            <a href="#"></a>
+          </li>
+          <li>
+            <img src="./src/img/visual/visual04.jpg" alt="해주항아리">
+            <div class="text-area">
+              <p class="type">소장품</p>
+              <p class="title">해주항아리(海州壺)</p>
+              <p>Blue and White Pocelain Jar Originated from Haeju</p>
+            </div>
+            <a href="#"></a>
+          </li>
+          <li>
+            <img src="./src/img/visual/visual05.jpg" alt="녹터널">
+            <div class="text-area">
+              <p class="type">소장품</p>
+              <p class="title">녹터널</p>
+              <p>Nocturnal / 1588, 프랑스</p>
+            </div>
+            <a href="#"></a>
+          </li>
+          <li><img src="./src/img/visual/visual06.jpg" alt=""><a href="#"></a></li>
+        </ul>
+      </div>
+
+      <div class="slide-tab">
+        <ul>
+          <li class="active"><a href="#">01</a></li>
+          <li><a href="#">02</a></li>
+          <li><a href="#">03</a></li>
+          <li><a href="#">04</a></li>
+          <li><a href="#">05</a></li>
+          <li><a href="#">06</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="plan" id="plan">
+      <div class="content-slide-wrap">
+        <ul class="content">
+          <li>
+            <div class="left">
+              <p class="type">기획전시</p>
+              <p class="title">해양제주 - <br>바다에서 바라본<br>제주바당</p>
+              <p class="date">2020.04.28 - 07.05</p>
+              <a class="button" href="">자세히 보기</a>
+            </div>
+            <div class="right">
+            </div>
+          </li>
+          <li>
+            <div class="left">
+              <p class="type">3층 상설전시</p>
+              <p class="title">해양생물</p>
+              <p class="text">생명이 역동하는 광활한 바다</p>
+              <a class="button" href="">자세히 보기</a>
+            </div>
+            <div class="right">
+            </div>
+          </li>
+          <li>
+            <div class="left">
+              <p class="type">3층 상설전시</p>
+              <p class="title">해양문화</p>
+              <p class="text">바다에서의 삶</p>
+              <a class="button" href="">자세히 보기</a>
+            </div>
+            <div class="right">
+            </div>
+          </li>
+          <li>
+            <div class="left">
+              <p class="type">3층 상설전시</p>
+              <p class="title">항해선박</p>
+              <p class="text">선조들의 기술과 해양력</p>
+              <a class="button" href="#">자세히 보기</a>
+            </div>
+            <div class="right">
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <ul class="listNum">
+        <li class="active">01</li>
+        <li>02</li>
+        <li>03</li>
+        <li>04</li>
+      </ul>
+    </section>
+
+    <section class="online-edu" id="edu">
+      <div class="slide-area">
+        <ul class="slide-content">
+          <li>
+            <div class="left">
+            </div>
+            <div class="right">
+              <p class="type">교육</p>
+              <p class="title">온라인 교육자료실</p>
+              <p class="text">바다와 역사와 문화에 관한 다양한 교육자료를<br>제공합니다</p>
+              <a class="button" href="">자세히 보기</a>
+            </div>
+          </li>
+          <li>
+            <div class="left">
+              <img src="" alt="">
+            </div>
+            <div class="right">
+              <p class="type">교육</p>
+              <p class="title">어린이 박물관</p>
+              <p class="text">바다와 환경에 대한 어린이 체험형 전시</p>
+              <a class="button" href="">자세히 보기</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <ul class="listNum">
+        <li class="active">01</li>
+        <li>02</li>
+      </ul>
+    </section>
+
+    <section class="have-item" id="item">
+      <h2>주요 소장품</h2>
+      <div class="inner">
+        <div class="line-one">
+          <div>
+            <img src="./src/img/haveitem/haveitem01.jpg" alt="">
+            <p class="title">이충무공전서</p>
+            <p class="text">한국 / 1795년 / 종이</p>
           </div>
-          <a href="#"></a>
-        </li>
-        <li>
-          <img src="./src/img/visual/visual04.jpg" alt="">
-          <div class="text-area">
-            <p class="type">소장품</p>
-            <p class="title">해주항아리(海州壺)</p>
-            <p>Blue and White Pocelain Jar Originated from Haeju</p>
+          <div>
+            <img src="./src/img/haveitem/haveitem02.jpg" alt="">
+            <p class="title">구스의 해도첩</p>
+            <p class="text">네덜란드 / 1666년 / 종이, 가죽</p>
           </div>
-          <a href="#"></a>
-        </li>
-        <li>
-          <img src="./src/img/visual/visual05.jpg" alt="">
-          <div class="text-area">
-            <p class="type">소장품</p>
+        </div>
+        <div class="line-two">
+          <div>
+            <img src="./src/img/haveitem/haveitem03.jpg" alt="">
+            <p class="title">지구의와 천문의</p>
+            <p class="text">영국 / 1846년 / 나무, 종이</p>
+          </div>
+        </div>
+        <div class="line-three">
+          <div>
+            <img src="./src/img/haveitem/haveitem04.jpg" alt="">
             <p class="title">녹터널</p>
-            <p>Nocturnal / 1588, 프랑스</p>
+            <p class="text">프랑스 / 1588년 / 철제ㆍ금속</p>
           </div>
-          <a href="#"></a>
-        </li>
-        <li><img src="./src/img/visual/visual06.jpg" alt=""><a href="#"></a></li>
-      </ul>
-    </div>
-
-    <div class="slide-tab">
-      <ul>
-        <li class="active"><a href="#">01</a></li>
-        <li><a href="#">02</a></li>
-        <li><a href="#">03</a></li>
-        <li><a href="#">04</a></li>
-        <li><a href="#">05</a></li>
-        <li><a href="#">06</a></li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="plan" id="plan">
-    <div class="content-slide-wrap">
-      <ul class="content">
-        <li>
-          <div class="left">
-            <p class="type">기획전시</p>
-            <p class="title">해양제주 - <br>바다에서 바라본<br>제주바당</p>
-            <p class="date">2020.04.28 - 07.05</p>
-            <a class="button" href="">자세히 보기</a>
+          <div>
+            <img src="./src/img/haveitem/haveitem05.jpg" alt="">
+            <p class="title">충민공계초</p>
+            <p class="text">한국 / 1662년 / 종이</p>
           </div>
-          <div class="right">
-          </div>
-        </li>
-        <li>
-          <div class="left">
-            <p class="type">3층 상설전시</p>
-            <p class="title">해양생물</p>
-            <p class="text">생명이 역동하는 광활한 바다</p>
-            <a class="button" href="">자세히 보기</a>
-          </div>
-          <div class="right">
-          </div>
-        </li>
-        <li>
-          <div class="left">
-            <p class="type">3층 상설전시</p>
-            <p class="title">해양문화</p>
-            <p class="text">바다에서의 삶</p>
-            <a class="button" href="">자세히 보기</a>
-          </div>
-          <div class="right">
-          </div>
-        </li>
-        <li>
-          <div class="left">
-            <p class="type">3층 상설전시</p>
-            <p class="title">항해선박</p>
-            <p class="text">선조들의 기술과 해양력</p>
-            <a class="button" href="#">자세히 보기</a>
-          </div>
-          <div class="right">
-          </div>
-        </li>
-      </ul>
-    </div>
-
-    <ul class="listNum">
-      <li class="active">01</li>
-      <li>02</li>
-      <li>03</li>
-      <li>04</li>
-    </ul>
-  </section>
-
-
-  <section class="online-edu" id="edu">
-    <div class="slide-area">
-      <ul class="slide-content">
-        <li>
-          <div class="left">
-          </div>
-          <div class="right">
-            <p class="type">교육</p>
-            <p class="title">온라인 교육자료실</p>
-            <p class="text">바다와 역사와 문화에 관한 다양한 교육자료를<br>제공합니다</p>
-            <a class="button" href="">자세히 보기</a>
-          </div>
-        </li>
-        <li>
-          <div class="left">
-            <img src="" alt="">
-          </div>
-          <div class="right">
-            <p class="type">교육</p>
-            <p class="title">어린이 박물관</p>
-            <p class="text">바다와 환경에 대한 어린이 체험형 전시</p>
-            <a class="button" href="">자세히 보기</a>
-          </div>
-        </li>
-      </ul>
-    </div>
-    <ul class="listNum">
-      <li class="active">01</li>
-      <li>02</li>
-    </ul>
-  </section>
-
-  <section class="have-item" id="item">
-    <h2>주요 소장품</h2>
-    <div class="inner">
-      <div class="line-one">
-        <div>
-          <img src="./src/img/haveitem/haveitem01.jpg" alt="">
-          <p class="title">이충무공전서</p>
-          <p class="text">한국 / 1795년 / 종이</p>
-        </div>
-        <div>
-          <img src="./src/img/haveitem/haveitem02.jpg" alt="">
-          <p class="title">구스의 해도첩</p>
-          <p class="text">네덜란드 / 1666년 / 종이, 가죽</p>
         </div>
       </div>
-      <div class="line-two">
-        <div>
-          <img src="./src/img/haveitem/haveitem03.jpg" alt="">
-          <p class="title">지구의와 천문의</p>
-          <p class="text">영국 / 1846년 / 나무, 종이</p>
-        </div>
+      <a class="button" href="#">소장품 더보기</a>
       </div>
-      <div class="line-three">
-        <div>
-          <img src="./src/img/haveitem/haveitem04.jpg" alt="">
-          <p class="title">녹터널</p>
-          <p class="text">프랑스 / 1588년 / 철제ㆍ금속</p>
-        </div>
-        <div>
-          <img src="./src/img/haveitem/haveitem05.jpg" alt="">
-          <p class="title">충민공계초</p>
-          <p class="text">한국 / 1662년 / 종이</p>
-        </div>
-      </div>
-    </div>
-    <a class="button" href="#">소장품 더보기</a>
-    </div>
-  </section>
+    </section>
 
-  <section class="alert" id="alert">
-    <h2>알림</h2>
-    <div class="inner">
-      <div class="left">
-        <article class="board">
-          <div class="tab tab1 active">
-            <h3 class="tab-title">알림</h3>
-            <ul>
-              <li class="notice-icon">
-                <a href="#">
-                  <span class="title">『해양유산(Ocean heritage)』 2호 원고모집</span>
-                  <span class="date">2020.06.01</span>
-                </a>
-              </li>
-              <li class="notice-icon">
-                <a href="#">
-                  <span class="title">[코로나19] 생활 속 거리 두기 5대 핵심 수칙</span>
-                  <span class="date">2020.05.21</span>
-                </a>
-              </li>
-              <li class="notice-icon">
-                <a href="#">
-                  <span class="title">생활 속 거리 두기 온라인 사전예약제 실시 안내</span>
-                  <span class="date">2020.05.06</span>
-                </a>
-              </li>
-              <li class="notice-icon">
-                <a href="#">
-                  <span class="title">'AR국립해양박물관' 해양교육 어플 안내 </span>
-                  <span class="date">2020.02.27</span>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <span class="title">2020년도 국가안전대진단</span>
-                  <span class="date">2020.06.09</span>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <span class="title">법정기념일 지정원년 「2020년 기록의 날」 안내</span>
-                  <span class="date">2020.05.29</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div class="tab tab2">
-            <h3 class="tab-title">입찰/채용공고</h3>
+    <section class="alert" id="alert">
+      <h2>알림</h2>
+      <div class="inner">
+        <div class="left">
+          <article class="board">
+            <div class="tab tab1 active">
+              <h3 class="tab-title">알림</h3>
+              <ul>
+                <li class="notice-icon">
+                  <a href="#">
+                    <span class="title">『해양유산(Ocean heritage)』 2호 원고모집</span>
+                    <span class="date">2020.06.01</span>
+                  </a>
+                </li>
+                <li class="notice-icon">
+                  <a href="#">
+                    <span class="title">[코로나19] 생활 속 거리 두기 5대 핵심 수칙</span>
+                    <span class="date">2020.05.21</span>
+                  </a>
+                </li>
+                <li class="notice-icon">
+                  <a href="#">
+                    <span class="title">생활 속 거리 두기 온라인 사전예약제 실시 안내</span>
+                    <span class="date">2020.05.06</span>
+                  </a>
+                </li>
+                <li class="notice-icon">
+                  <a href="#">
+                    <span class="title">'AR국립해양박물관' 해양교육 어플 안내 </span>
+                    <span class="date">2020.02.27</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span class="title">2020년도 국가안전대진단</span>
+                    <span class="date">2020.06.09</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span class="title">법정기념일 지정원년 「2020년 기록의 날」 안내</span>
+                    <span class="date">2020.05.29</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="tab tab2">
+              <h3 class="tab-title">입찰/채용공고</h3>
+              <ul>
+                <li>
+                  <a href="#">
+                    <span class="title">국립해양박물관 부속시설 운영자 우선협상대상자 선정 모집(입찰) 공고</span>
+                    <span class="date">2020.06.08</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span class="title">2020년 국립해양박물관 테마전시 <바다와 여성(가제)> 전시 연출 용역 전자입찰 공고</span>
+                    <span class="date">2020.06.04</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span class="title">2020년 2분기 해양도서관 단행본 자료구입 물품구매 수의견적 제출 공고</span>
+                    <span class="date">2020.05.25</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span class="title">돌고래급 잠수정 해상ㆍ 육상운송 및 수리 용역(재공고) </span>
+                    <span class="date">2020.05.22</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span class="title">돌고래급 잠수정 해상ㆍ 육상운송 및 수리 용역 전자입찰 공고</span>
+                    <span class="date">2020.05.14</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span class="title">국립해양박물관 2020년 제1차 해양미술품 구입 공고</span>
+                    <span class="date">2020.04.24</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="tab tab3">
+              <h3 class="tab-title">채용공고</h3>
+              <ul>
+                <li>
+                  <a href="#">
+                    <span class="title">2019년 4분기 친인척 채용정보 공개</span>
+                    <span class="date">2019.09.30</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span class="title">2019년 국립해양박물관 신규직원 채용 최종합격자 공고</span>
+                    <span class="date">2019.09.30</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span class="title">국립해양박물관 '19년 체험형 인턴 및 육아휴직 대체자 채용 면접 심사 합격자 공고</span>
+                    <span class="date">2019.09.24</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span class="title">국립해양박물관 수족관 관리팀장 채용공고</span>
+                    <span class="date">2019.09.24</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span class="title">국립해양박물관 ‘19년 체험형 인턴 및 육아휴직 대체자 채용 서류 심사 합격자 공고</span>
+                    <span class="date">2019.09.17</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span class="title">2019년 국립해양박물관 신규직원 채용 면접전형 결과 안내</span>
+                    <span class="date">2019.09.11</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span class="title">법정기념일 지정원년 「2020년 기록의 날」 안내</span>
+                    <span class="date">2020.05.29</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="tab tab4">
+              <h3 class="tab-title">박물관 일정</h3>
+              <ul>
+                <li>
+                  <a href="#">
+                    <span class="title">[교육] 전시관람 자율학습 활동지..</span>
+                    <span class="date">2020.06.11</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span class="title">[전시] 해양제주 OCEAN JEJU - 바다에서 바라본 제주바당..</span>
+                    <span class="date">2020-06-11</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </article>
+          <article class="visual-news">
+            <h3>영상/카드 뉴스</h3>
             <ul>
               <li>
                 <a href="#">
-                  <span class="title">국립해양박물관 부속시설 운영자 우선협상대상자 선정 모집(입찰) 공고</span>
-                  <span class="date">2020.06.08</span>
+                  <img src="./src/img/visualnews/visual03.jpg" alt="">
+                  <p class="text">[기획전시] 해양제주 - 바다에서 바라본 제주바당 (온라인 전시해설 3편) </p>
                 </a>
               </li>
               <li>
                 <a href="#">
-                  <span class="title">2020년 국립해양박물관 테마전시 <바다와 여성(가제)> 전시 연출 용역 전자입찰 공고</span>
-                  <span class="date">2020.06.04</span>
+                  <img src="./src/img/visualnews/visual02.jpg" alt="">
+                  <p class="text">[기획전시] 해양제주 - 바다에서 바라본 제주바당 (온라인 전시해설 2편) </p>
                 </a>
               </li>
               <li>
                 <a href="#">
-                  <span class="title">2020년 2분기 해양도서관 단행본 자료구입 물품구매 수의견적 제출 공고</span>
-                  <span class="date">2020.05.25</span>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <span class="title">돌고래급 잠수정 해상ㆍ 육상운송 및 수리 용역(재공고) </span>
-                  <span class="date">2020.05.22</span>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <span class="title">돌고래급 잠수정 해상ㆍ 육상운송 및 수리 용역 전자입찰 공고</span>
-                  <span class="date">2020.05.14</span>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <span class="title">국립해양박물관 2020년 제1차 해양미술품 구입 공고</span>
-                  <span class="date">2020.04.24</span>
+                  <img src="./src/img/visualnews/visual01.jpg" alt="">
+                  <p class="text">[기획전시] 해양제주 - 바다에서 바라본 제주바당 (온라인 전시해설 1편) </p>
                 </a>
               </li>
             </ul>
-          </div>
-          <div class="tab tab3">
-            <h3 class="tab-title">채용공고</h3>
+          </article>
+        </div>
+        <div class="right">
+          <article class="popup">
+            <h3>팝업</h3>
+            <ul class="img-slide-area">
+              <li><a href="#"><img src="./src/img/popup/popup01.jpg" alt=""></a></li>
+              <li><a href="#"><img src="./src/img/popup/popup02.jpg" alt=""></a></li>
+              <li><a href="#"><img src="./src/img/popup/popup03.jpg" alt=""></a></li>
+              <li><a href="#"><img src="./src/img/popup/popup04.jpg" alt=""></a></li>
+              <li><a href="#"><img src="./src/img/popup/popup05.gif" alt=""></a></li>
+              <li><a href="#"><img src="./src/img/popup/popup06.gif" alt=""></a></li>
+            </ul>
+            <ul class="img-slide-button">
+              <li class="active"></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
+          </article>
+          <article class="photo-gallery">
+            <h3>포토갤러리</h3>
             <ul>
               <li>
                 <a href="#">
-                  <span class="title">2019년 4분기 친인척 채용정보 공개</span>
-                  <span class="date">2019.09.30</span>
+                  <img src="./src/img/photogallery/photogallery01.png" alt="">
+                  <p class="text">'찾아가는 국립해양박물관' 바다 버스 운영</p>
                 </a>
               </li>
               <li>
                 <a href="#">
-                  <span class="title">2019년 국립해양박물관 신규직원 채용 최종합격자 공고</span>
-                  <span class="date">2019.09.30</span>
+                  <img src="./src/img/photogallery/photogallery02.jpg" alt="">
+                  <p class="text">KNMM 드론 영상 - 국립해양박물관 </p>
                 </a>
               </li>
               <li>
                 <a href="#">
-                  <span class="title">국립해양박물관 '19년 체험형 인턴 및 육아휴직 대체자 채용 면접 심사 합격자 공고</span>
-                  <span class="date">2019.09.24</span>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <span class="title">국립해양박물관 수족관 관리팀장 채용공고</span>
-                  <span class="date">2019.09.24</span>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <span class="title">국립해양박물관 ‘19년 체험형 인턴 및 육아휴직 대체자 채용 서류 심사 합격자 공고</span>
-                  <span class="date">2019.09.17</span>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <span class="title">2019년 국립해양박물관 신규직원 채용 면접전형 결과 안내</span>
-                  <span class="date">2019.09.11</span>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <span class="title">법정기념일 지정원년 「2020년 기록의 날」 안내</span>
-                  <span class="date">2020.05.29</span>
+                  <img src="./src/img/photogallery/photogallery03.jpg" alt="">
+                  <p class="text">[기획전시] 잊힌 바다, 또 하나의 바다, 북한의 바다</p>
                 </a>
               </li>
             </ul>
-          </div>
-          <div class="tab tab4">
-            <h3 class="tab-title">박물관 일정</h3>
-            <ul>
-              <li>
-                <a href="#">
-                  <span class="title">[교육] 전시관람 자율학습 활동지..</span>
-                  <span class="date">2020.06.11</span>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <span class="title">[전시] 해양제주 OCEAN JEJU - 바다에서 바라본 제주바당..</span>
-                  <span class="date">2020-06-11</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </article>
-        <article class="visual-news">
-          <h3>영상/카드 뉴스</h3>
-          <ul>
-            <li>
-              <a href="#">
-                <img src="./src/img/visualnews/visual03.jpg" alt="">
-                <p class="text">[기획전시] 해양제주 - 바다에서 바라본 제주바당 (온라인 전시해설 3편) </p>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <img src="./src/img/visualnews/visual02.jpg" alt="">
-                <p class="text">[기획전시] 해양제주 - 바다에서 바라본 제주바당 (온라인 전시해설 2편) </p>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <img src="./src/img/visualnews/visual01.jpg" alt="">
-                <p class="text">[기획전시] 해양제주 - 바다에서 바라본 제주바당 (온라인 전시해설 1편) </p>
-              </a>
-            </li>
-          </ul>
-        </article>
+          </article>
+        </div>
       </div>
-      <div class="right">
-        <article class="popup">
-          <h3>팝업</h3>
-          <ul class="img-slide-area">
-            <li><a href="#"><img src="./src/img/popup/popup01.jpg" alt=""></a></li>
-            <li><a href="#"><img src="./src/img/popup/popup02.jpg" alt=""></a></li>
-            <li><a href="#"><img src="./src/img/popup/popup03.jpg" alt=""></a></li>
-            <li><a href="#"><img src="./src/img/popup/popup04.jpg" alt=""></a></li>
-            <li><a href="#"><img src="./src/img/popup/popup05.gif" alt=""></a></li>
-            <li><a href="#"><img src="./src/img/popup/popup06.gif" alt=""></a></li>
-          </ul>
-          <ul class="img-slide-button">
-            <li class="active"></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-          </ul>
-        </article>
-        <article class="photo-gallery">
-          <h3>포토갤러리</h3>
-          <ul>
-            <li>
-              <a href="#">
-                <img src="./src/img/photogallery/photogallery01.png" alt="">
-                <p class="text">'찾아가는 국립해양박물관' 바다 버스 운영</p>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <img src="./src/img/photogallery/photogallery02.jpg" alt="">
-                <p class="text">KNMM 드론 영상 - 국립해양박물관 </p>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <img src="./src/img/photogallery/photogallery03.jpg" alt="">
-                <p class="text">[기획전시] 잊힌 바다, 또 하나의 바다, 북한의 바다</p>
-              </a>
-            </li>
-          </ul>
-        </article>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="info" id="info">
-    <h2>관람 안내</h2>
-    <div class="inner">
-      <div class="left">
-        <div>
-          <p class="title one">관람시간</p>
-          <div class="text">
-            <p>화요일~일요일</p>
-            <p>09:00~17:00</p>
+    <section class="info" id="info">
+      <h2>관람 안내</h2>
+      <div class="inner">
+        <div class="left">
+          <div>
+            <p class="title one">관람시간</p>
+            <div class="text">
+              <p>화요일~일요일</p>
+              <p>09:00~17:00</p>
+            </div>
+            <ul class="list">
+              <li>관람은 예약하신 시간(2시간)에만 가능하며, 입장 마감 시간은 해당 타임의 종료시간 30분 전입니다.</li>
+              <li> 입장 시작 시점 이후 20분부터는 입장이 지연될 수 있으니 가급적 입장시간을 지켜주세요.</li>
+              <li>입장시 마스크를 꼭 착용해 주시기 바랍니다. 마스크 미착용시 입장이 불가합니다.</li>
+            </ul>
           </div>
-          <ul class="list">
-            <li>관람은 예약하신 시간(2시간)에만 가능하며, 입장 마감 시간은 해당 타임의 종료시간 30분 전입니다.</li>
-            <li> 입장 시작 시점 이후 20분부터는 입장이 지연될 수 있으니 가급적 입장시간을 지켜주세요.</li>
-            <li>입장시 마스크를 꼭 착용해 주시기 바랍니다. 마스크 미착용시 입장이 불가합니다.</li>
-          </ul>
+          <div>
+            <p class="title two">관람료</p>
+            <p class="text">
+              무료 (4D영상관, 유료특별전시 제외)
+            </p>
+          </div>
         </div>
-        <div>
-          <p class="title two">관람료</p>
-          <p class="text">
-            무료 (4D영상관, 유료특별전시 제외)
-          </p>
+        <div class="right">
+          <div>
+            <p class="title three">휴관</p>
+            <div class="text">
+              <p>휴관일</p>
+              <p>매주 월요일</p>
+            </div>
+            <ul class="list">
+              <li>단, 월요일이 공휴일일 때에는 공휴일 다음의 첫 번째 평일에 휴관합니다.<br>
+                (「관공서의 공휴일에 관한 규정」 제2조)</li>
+            </ul>
+          </div>
+          <div>
+            <p class="title four">관람문의</p>
+            <div class="text">
+              <p>문의전화<br>이메일</p>
+              <p>051.309.1900<br>webmaster@knmm.or.kr</p>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="right">
-        <div>
-          <p class="title three">휴관</p>
-          <div class="text">
-            <p>휴관일</p>
-            <p>매주 월요일</p>
-          </div>
-          <ul class="list">
-            <li>단, 월요일이 공휴일일 때에는 공휴일 다음의 첫 번째 평일에 휴관합니다.<br>
-              (「관공서의 공휴일에 관한 규정」 제2조)</li>
-          </ul>
-        </div>
-        <div>
-          <p class="title four">관람문의</p>
-          <div class="text">
-            <p>문의전화<br>이메일</p>
-            <p>051.309.1900<br>webmaster@knmm.or.kr</p>
-          </div>
-        </div>
+      <div class="btn-area">
+        <a class="button" href="#">해양도서관</a>
+        <a class="button" href="#">어린이박물관</a>
+        <a class="button" href="#">관람 사전 예약</a>
       </div>
-    </div>
-    <div class="btn-area">
-      <a class="button" href="#">해양도서관</a>
-      <a class="button" href="#">어린이박물관</a>
-      <a class="button" href="#">관람 사전 예약</a>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <footer>
     <div class="top">
