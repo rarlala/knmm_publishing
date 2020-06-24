@@ -523,21 +523,84 @@ header .search::after {
   overflow: hidden;
 }
 
-.visual-slide li {
-  position: relative;
-  float: left;
+.visual-slide .slide-area ul li {
+  position: absolute;
+  top: 0;
+  left: 0;
   height: 100vh;
-}
-
-.visual-slide .slide-area li.on img {
-  display: block;
 }
 
 .visual-slide .slide-area li img {
-  display: none;
+  display: block;
   width: 100vw;
   height: 100vh;
   max-height: 100vh;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.visual-slide .slide-area ul li.on img {
+  opacity: 1;
+}
+
+.visual-slide .slide-area ul li .text-area {
+  position: absolute;
+  top: 28%;
+  left: 48%;
+  color: #fff;
+  font-size: 18px;
+  opacity: 0;
+  transition: all 2s;
+}
+
+.visual-slide .slide-area ul li.on .text-area {
+  position: absolute;
+  left: 50%;
+  opacity: 1;
+}
+
+.visual-slide .slide-area ul li .type {
+  display: inline;
+  padding-bottom: 10px;
+  font-size: 19px;
+  border-bottom: 1px solid #fff;
+}
+
+.visual-slide .slide-area ul li .title {
+  margin: 40px 0 30px;
+  font-size: 54px;
+  line-height: 1.2;
+}
+
+.visual-slide .slide-area ul li a {
+  position: absolute;
+  opacity: 0;
+  top: 44%;
+  left: 48%;
+  width: 30px;
+  height: 30px;
+  background: url('../img/header/cicon.svg') no-repeat center;
+  transition: all 2s;
+}
+
+.visual-slide .slide-area ul li.on a {
+  left: 50%;
+  opacity: 1;
+}
+
+.visual-slide .slide-area li:nth-child(1) a,
+.visual-slide .slide-area li:nth-child(2) a,
+.visual-slide .slide-area li:nth-child(6) a {
+  top: 44%;
+}
+
+.visual-slide .slide-area li:nth-child(3) a {
+  top: 70%;
+}
+
+.visual-slide .slide-area li:nth-child(4) a,
+.visual-slide .slide-area li:nth-child(5) a {
+  top: 65%;
 }
 
 @keyframes leftToRight {
@@ -554,60 +617,10 @@ header .search::after {
   }
 }
 
-.visual-slide .slide-area .text-area {
-  position: absolute;
-  top: 32%;
-  left: 50%;
-  color: #fff;
-  font-size: 18px;
-}
-
-.visual-slide .slide-area .type {
-  display: inline;
-  padding-bottom: 10px;
-  font-size: 19px;
-  border-bottom: 1px solid #fff;
-}
-
-.visual-slide .slide-area .title {
-  margin: 40px 0 30px;
-  font-size: 54px;
-  line-height: 1.2;
-}
-
-.visual-slide .slide-area li:nth-child(1) a,
-.visual-slide .slide-area li:nth-child(2) a,
-.visual-slide .slide-area li:nth-child(6) a {
-  position: absolute;
-  top: 44%;
-  left: 50%;
-  width: 30px;
-  height: 30px;
-  background: url('../img/header/cicon.svg') no-repeat center;
-}
-
-.visual-slide .slide-area li:nth-child(3) a {
-  position: absolute;
-  top: 70%;
-  left: 50%;
-  width: 30px;
-  height: 30px;
-  background: url('../img/header/cicon.svg') no-repeat center;
-}
-
-.visual-slide .slide-area li:nth-child(4) a,
-.visual-slide .slide-area li:nth-child(5) a {
-  position: absolute;
-  top: 65%;
-  left: 50%;
-  width: 30px;
-  height: 30px;
-  background: url('../img/header/cicon.svg') no-repeat center;
-}
-
-.visual-slide .slide-area li a:hover {
+.visual-slide .slide-area li.on a:hover {
   animation: leftToRight 1s;
   animation-direction: alternate;
+  border: 1px solid red;
 }
 
 .visual-slide .slide-tab {
@@ -619,6 +632,7 @@ header .search::after {
 }
 
 .visual-slide .slide-tab ul li {
+  float: left;
   width: 75px;
   height: 100%;
   font-size: 18px;
@@ -628,7 +642,7 @@ header .search::after {
   cursor: pointer;
 }
 
-.visual-slide .slide-tab ul li.active {
+.visual-slide .slide-tab ul li.on {
   color: #fff;
   font-size: 24px;
   border-bottom: 1px solid #fff;
@@ -650,9 +664,9 @@ header .search::after {
 }
 
 .plan .content {
+  position: relative;
   width: 500%;
   height: 100vh;
-  margin-left: -100%;
 }
 
 .plan .content li {
@@ -709,12 +723,12 @@ header .search::after {
 .online-edu .title,
 .plan .title {
   margin: 30px 0;
-  font-size: 52px;
+  font-size: 48px;
   line-height: 1.2;
 }
 
 .plan .date {
-  margin: 30px 0 100px;
+  margin: 30px 0 50px;
   font-size: 24px;
   color: #909090;
 }
@@ -774,7 +788,7 @@ header .search::after {
   cursor: pointer;
 }
 
-.listNum li.active {
+.listNum li.on {
   color: #000;
   border-bottom: 1px solid #000;
   font-weight: bold;
@@ -794,13 +808,13 @@ header .search::after {
   overflow: hidden;
 }
 
-.online-edu .slide-content {
+.online-edu .content {
+  position: relative;
   width: 300%;
   height: 100vh;
-  margin-left: -100%;
 }
 
-.online-edu .slide-content li {
+.online-edu .content li {
   float: left;
   width: 100vw;
   height: 100vh;
@@ -808,23 +822,23 @@ header .search::after {
   overflow: hidden;
 }
 
-.online-edu .slide-content li .left,
-.online-edu .slide-content li .right {
+.online-edu .content li .left,
+.online-edu .content li .right {
   float: left;
 }
 
-.online-edu .slide-content li .left {
+.online-edu .content li .left {
   position: relative;
   width: 60vw;
   height: 85%;
 }
 
-.online-edu .slide-content li .right {
+.online-edu .content li .right {
   width: 40vw;
   padding-top: 50px;
 }
 
-.online-edu .slide-content li:nth-child(1) .left::after {
+.online-edu .content li:nth-child(1) .left::after {
   content: '';
   position: absolute;
   top: -42px;
@@ -834,11 +848,7 @@ header .search::after {
   background: url('../img/online-edu/online01.jpg') no-repeat top/cover;
 }
 
-.online-edu .slide-content li:nth-child(2) {
-  margin-left: -20px;
-}
-
-.online-edu .slide-content li:nth-child(2) .left::after {
+.online-edu .content li:nth-child(2) .left::after {
   content: '';
   position: absolute;
   top: -42px;
@@ -956,6 +966,10 @@ header .search::after {
   margin-right: 7%;
 }
 
+.alert .right {
+  overflow: hidden;
+}
+
 /* board */
 .alert .board {
   position: relative;
@@ -982,7 +996,7 @@ header .search::after {
   display: none;
 }
 
-.alert .board .tab.active ul {
+.alert .board .tab.on ul {
   display: inline-block;
 }
 
@@ -991,7 +1005,7 @@ header .search::after {
   transition: all 0.5s;
 }
 
-.alert .board .tab.active .tab-title {
+.alert .board .tab.on .tab-title {
   background: #222;
   color: #ccc;
 }
@@ -1102,26 +1116,28 @@ header .search::after {
 
 .popup {
   position: relative;
-  width: 100%;
   margin-bottom: 20px;
+  width: 100%;
 }
 
-.popup ul {
-  width: 100%;
+.popup .content {
+  position: relative;
+  width: 601%;
   height: 280px;
   overflow: hidden;
 }
 
-.popup ul li {
+.popup .content li {
   float: left;
 }
 
 .popup ul li img {
-  max-width: 100%;
-  float: left;
+  max-width: 462.5px;
+  display: block;
+  background: #000;
 }
 
-.popup .img-slide-button {
+.popup .listNum {
   position: absolute;
   top: 10px;
   right: 0;
@@ -1129,19 +1145,20 @@ header .search::after {
   height: 20px;
 }
 
-.popup .img-slide-button li {
+.popup .listNum li {
   width: 10px;
   height: 10px;
+  padding: 0;
   border: 1px solid #000;
   border-radius: 50%;
   cursor: pointer;
 }
 
-.popup .img-slide-button li.active {
+.popup .listNum li.on {
   background: #000;
 }
 
-.popup .img-slide-button li+li {
+.popup .listNum li+li {
   margin-left: 5.5px;
 }
 

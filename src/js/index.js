@@ -26,6 +26,66 @@ $(function() {
     }, 'slow', 'swing');
   })
 
+  // fade in fade out slide -> visual-slide 해당
+  function fadeInSlide() {
+    var slideLength = $('.visual-slide .slide-area ul li').length;
+    var slideNext = 0;
+
+    var timerId = '';
+    var speed = 5000;
+
+    timerId = setInterval(function() {
+      slideRepeat();
+    }, speed)
+
+    function slideRepeat() {
+      var slideNow = $('.visual-slide .slide-area ul li.on').index();
+      slideNext = (slideNow + 1) < slideLength ? slideNow + 1 : 0;
+      slide(slideNext);
+    }
+
+    $('.visual-slide .slide-tab ul li').on('click', function() {
+      clearInterval(timerId);
+      var index = $(this).index();
+      slideNext = index + 1;
+      slide(index);
+
+      timerId = setInterval(function() {
+        slideRepeat();
+      }, speed)
+    })
+
+    function slide(n) {
+      $('.visual-slide .slide-area ul li').removeClass('on');
+      $(`.visual-slide .slide-area ul li:eq(${n})`).addClass('on');
+      $('.visual-slide .slide-tab ul li').removeClass('on')
+      $(`.visual-slide .slide-tab ul li:eq(${n})`).addClass('on');
+    }
+  }
+
+  function ltrSlide(select) {
+    $(select).find('.listNum li').on('click', function() {
+      var index = $(this).index();
+      slide(index);
+    })
+
+    function slide(n) {
+      var leftValue = (n * -100) + '%';
+
+      $(select).find('.content').css({
+        'transition': 'left 1s',
+        'left': `${leftValue}`
+      })
+
+      $(select).find('.listNum li').removeClass('on');
+      $(select).find(`.listNum li:eq(${n})`).addClass('on');
+    }
+  }
+
+  fadeInSlide();
+  ltrSlide($('.plan'));
+  ltrSlide($('.online-edu'));
+  ltrSlide($('.alert .popup'));
 
   //scroll에 따른 화면 이동
 
