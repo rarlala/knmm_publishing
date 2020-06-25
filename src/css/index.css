@@ -139,17 +139,25 @@ header.active .tnb>li:nth-child(n+3) {
   border: 1px solid rgba(0, 0, 0, 0.5);
 }
 
-header .tnb>li:nth-child(3) {
-  opacity: 1;
+header .tnb .language {
+  position: relative;
 }
 
 header .tnb .language .select-language-list {
+  position: absolute;
+  visibility: hidden;
+  top: 30px;
+  left: 0;
+  width: 94px;
   border: 1px solid #222;
-  display: none;
+  opacity: 0;
+  cursor: pointer;
 }
 
 header .tnb .language.on .select-language-list {
-  display: block;
+  visibility: visible;
+  opacity: 1;
+  transition: all 1s;
 }
 
 header .tnb .language .select-language-list li {
@@ -498,6 +506,7 @@ header .search::after {
   font-weight: lighter;
   color: #fff;
   animation: scrollDown 2s infinite;
+  cursor: pointer;
 }
 
 .btn-scroll-down i {
@@ -568,24 +577,34 @@ header .search::after {
 
 .visual-slide .slide-area ul li .title {
   margin: 40px 0 30px;
-  font-size: 54px;
+  font-size: 45px;
   line-height: 1.2;
 }
 
 .visual-slide .slide-area ul li a {
   position: absolute;
-  opacity: 0;
   top: 44%;
   left: 48%;
   width: 30px;
   height: 30px;
-  background: url('../img/header/cicon.svg') no-repeat center;
-  transition: all 2s;
+  opacity: 0;
+  z-index: 10;
+  transition: all 1s;
 }
 
 .visual-slide .slide-area ul li.on a {
   left: 50%;
   opacity: 1;
+}
+
+.visual-slide .slide-area ul li a:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url('../img/header/cicon.svg') no-repeat center;
+  width: 30px;
+  height: 30px;
 }
 
 .visual-slide .slide-area li:nth-child(1) a,
@@ -617,10 +636,9 @@ header .search::after {
   }
 }
 
-.visual-slide .slide-area li.on a:hover {
-  animation: leftToRight 1s;
-  animation-direction: alternate;
-  border: 1px solid red;
+.visual-slide .slide-area ul li.on a:hover {
+  animation: leftToRight 1s ease;
+  animation-iteration-count: 1;
 }
 
 .visual-slide .slide-tab {
@@ -667,6 +685,7 @@ header .search::after {
   position: relative;
   width: 500%;
   height: 100vh;
+  left: 0;
 }
 
 .plan .content li {
@@ -723,7 +742,7 @@ header .search::after {
 .online-edu .title,
 .plan .title {
   margin: 30px 0;
-  font-size: 48px;
+  font-size: 45px;
   line-height: 1.2;
 }
 
@@ -810,6 +829,7 @@ header .search::after {
 
 .online-edu .content {
   position: relative;
+  left: 0;
   width: 300%;
   height: 100vh;
 }
@@ -1122,6 +1142,7 @@ header .search::after {
 
 .popup .content {
   position: relative;
+  left: 0;
   width: 601%;
   height: 280px;
   overflow: hidden;
