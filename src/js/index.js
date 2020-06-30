@@ -1,13 +1,31 @@
-$(function() {
-
+$(function () {
   // left-menu-bar follow 버튼
-  $('.left-menu-bar .follow').click(function() {
+  $('.left-menu-bar .follow').on('click', function () {
     $('.left-menu-bar .follow-container').fadeToggle('hidden');
     $('.left-menu-bar .follow').toggleClass('active');
-  })
+  });
+
+  // left-menu-bar site map
+
+  $('.left-menu-bar .menu-btn').on('click', function () {
+    $(this).addClass('on');
+    $(this).parent().find('.site-map').css({
+      transition: 'all 1s',
+      display: 'block',
+      opacity: 1,
+    });
+  });
+
+  $('.left-menu-bar .site-map .btn-siteMapClose').on('click', function () {
+    $('.left-menu-bar .menu-btn').removeClass('on');
+    $('.left-menu-bar .site-map').css({
+      display: 'none',
+      opacity: 0,
+    });
+  });
 
   // right-menu-bar click 시 이동
-  $('.right-menu-bar li').click(function() {
+  $('.right-menu-bar li').on('click',function() {
     var target = $(this).find('a').attr('href'),
       index = $(this).index();
 
@@ -72,9 +90,9 @@ $(function() {
 
   function ltrSlide(select) {
     $(select).find('.listNum li').on('click', function() {
-      var index = $(this).index();
-      slide(index);
-    })
+        var index = $(this).index();
+        slide(index);
+      })
 
     function slide(n) {
       var leftValue = (n * -100) + '%';
