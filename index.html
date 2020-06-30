@@ -14,15 +14,14 @@
   <link rel="stylesheet" href="./src/font/css/all.min.css">
   <link rel="stylesheet" href="./src/css/index.css">
   <script src="./src/js/jquery-3.3.1.min.js"></script>
-  <script src="./src/js/common.js"></script>
   <script src="./src/js/index.js"></script>
 </head>
 
 <body>
   <a href="#main" id="skip-nav">본문 바로가기</a>
   <header id="header">
-    <h1 class="logo">
-      <p class="blind">국립해양박물관 로고</span>
+    <h1 class="logo" tabindex="0">
+      <a href="./index.html"><span class="blind">국립해양박물관 로고</span></a>
     </h1>
 
     <ul class="gnb">
@@ -48,7 +47,7 @@
       </li>
     </ul>
 
-    <div class="search">
+    <div class="search" tabindex="0">
       <a href="#" class="search-btn"></a>
       <div class="search-click hidden">
         <input type="text" placeholder="검색어를 입력하세요">
@@ -58,7 +57,7 @@
   </header>
 
   <div class="left-menu-bar">
-    <div class="menu-btn">
+    <div class="menu-btn" tabindex="0">
       <a><span></span><span class="blind">사이트맵 열기</span></a>
     </div>
     <nav class="site-map">
@@ -115,9 +114,9 @@
                     <li><a href="#">층별전시안내</a></li>
                     <li><a href="#">3층 항해선박</a></li>
                     <li><a href="#">3층 해양역사인물</a></li>
-  
+
                     <li><a href="#">3층 해양생물</a></li>
-  
+
                     <li><a href="#">4층 해양산업</a></li>
                     <li><a href="#">4층 해양과학</a></li>
                     <li><a href="#">4층 해양영토</a></li>
@@ -148,8 +147,8 @@
                 <li>
                   <a href="#">해양교육문화박람회</a>
                   <ul class="sm-depth">
-                      <li><a href="#">어린이 그리고 우리의 바다</a></li>
-                      <li><a href="#">내가 만드는 해양교육문화박람회</a></li>
+                    <li><a href="#">어린이 그리고 우리의 바다</a></li>
+                    <li><a href="#">내가 만드는 해양교육문화박람회</a></li>
                   </ul>
                 </li>
                 <li>
@@ -203,10 +202,10 @@
             </div>
             <div class="list">
               <span class="tit"><a href="#">학술연구</a></span>
-                <ul>
-                  <li><a href="#">학술행사</a></li>
-                  <li><a href="#">발간총서</a></li>
-                </ul>
+              <ul>
+                <li><a href="#">학술행사</a></li>
+                <li><a href="#">발간총서</a></li>
+              </ul>
               <span class="tit" style="margin-top:75px"><a href="#">발간자료</a></span>
               <ul>
                 <li><a href="#">소장자료 연구</a></li>
@@ -273,51 +272,51 @@
               <span class="tit"><a href="#">정보공개</a></span>
               <ul>
                 <li>
-                    <a href="#">정보공개제도안내</a>
-                    <ul class="sm-depth">
-                        <li><a href="#">정보공개개요 및 처리절차</a></li>
-                        <li><a href="#">정보공개방법</a></li>
-                        <li><a href="#">비공개정보 세부기준</a></li>
-                        <li><a href="#">불복구제 절차</a></li>
-                        <li><a href="#">정보공개관련 법규</a></li>
-                        <li><a href="#">정보공개관련 서식</a></li>
-                        <li><a href="#">정보공개수수료</a></li>
-                    </ul>
+                  <a href="#">정보공개제도안내</a>
+                  <ul class="sm-depth">
+                    <li><a href="#">정보공개개요 및 처리절차</a></li>
+                    <li><a href="#">정보공개방법</a></li>
+                    <li><a href="#">비공개정보 세부기준</a></li>
+                    <li><a href="#">불복구제 절차</a></li>
+                    <li><a href="#">정보공개관련 법규</a></li>
+                    <li><a href="#">정보공개관련 서식</a></li>
+                    <li><a href="#">정보공개수수료</a></li>
+                  </ul>
                 </li>
                 <li>
-                    <a href="#">사전정보공개</a>
-                    <ul class="sm-depth">
-                        <li><a href="#">사전정보공표목록</a></li>
-                        <li><a href="#">제목별공표목록</a></li>
-                    </ul>
+                  <a href="#">사전정보공개</a>
+                  <ul class="sm-depth">
+                    <li><a href="#">사전정보공표목록</a></li>
+                    <li><a href="#">제목별공표목록</a></li>
+                  </ul>
                 </li>
                 <li><a href="#">정보목록</a></li>
                 <li><a href="https://www.open.go.kr/" target="_blank">정보공개청구신청</a></li>
                 <li><a href="#">공공데이터개방</a></li>
                 <li>
-                    <a href="#">사업실명제</a>
-                    <ul class="sm-depth">
-                        <li><a href="#">사업실명제 개요</a></li>
-                        <li><a href="#">선정기준 및 현황</a></li>
-                        <li><a href="#">대상사업리스트</a></li>
-                    </ul>
+                  <a href="#">사업실명제</a>
+                  <ul class="sm-depth">
+                    <li><a href="#">사업실명제 개요</a></li>
+                    <li><a href="#">선정기준 및 현황</a></li>
+                    <li><a href="#">대상사업리스트</a></li>
+                  </ul>
                 </li>
               </ul>
             </div>
           </div>
           <div class="bottom">
             <strong class="sm-title">이용약관</strong>
-              <ul>
-                <li><a href="#">이용약관</a></li>
-                <li><a href="#">개인정보처리방침</a></li>
-                <li><a href="#">영상정보처리기기 운영ㆍ관리 방침</a></li>
-                <li><a href="#">이메일무단수집거부</a></li>
-                <li><a href="#">저작권정책</a></li>
-              </ul>
-              <div class="btn-group">
-                <button class="btn-login"><a href="#">로그인</a></button>
-                <button class="btn-signUp"><a href="#">회원가입</a></button>
-              </div>
+            <ul>
+              <li><a href="#">이용약관</a></li>
+              <li><a href="#">개인정보처리방침</a></li>
+              <li><a href="#">영상정보처리기기 운영ㆍ관리 방침</a></li>
+              <li><a href="#">이메일무단수집거부</a></li>
+              <li><a href="#">저작권정책</a></li>
+            </ul>
+            <div class="btn-group">
+              <button class="btn-login"><a href="#">로그인</a></button>
+              <button class="btn-signUp"><a href="#">회원가입</a></button>
+            </div>
           </div>
         </div>
         <a href="#" class="btn-siteMapClose"></a>
@@ -356,23 +355,17 @@
     <h1 class="logo"><span class="blind">국립해양박물관 로고</span></h1>
   </div>
 
-  <div class="right-menu-bar">
-    <ul>
-      <li><a href="#plan">기획전시</a></li>
-      <li><a href="#edu">교육문화</a></li>
-      <li><a href="#item">주요소장품</a></li>
-      <li><a href="#alert">알림</a></li>
-      <li><a href="#info">관람안내</a></li>
-      <li class="active"><a href="#top">▲TOP</a></li>
-    </ul>
-  </div>
-
-  <div class="btn-scroll-down">
-    <p>SCROLL DOWN</p>
-    <i class="fas fa-chevron-circle-down"></i>
-  </div>
-
   <main id="main">
+    <div id="page-indicator">
+      <ul>
+        <li><a href="#plan">기획전시</a></li>
+        <li><a href="#edu">교육문화</a></li>
+        <li><a href="#item">주요소장품</a></li>
+        <li><a href="#alert">알림</a></li>
+        <li><a href="#info">관람안내</a></li>
+        <li class="active"><a href="#top">▲TOP</a></li>
+      </ul>
+    </div>
     <section class="visual-slide" id="top">
       <h2 class="blind">안내 슬라이드</h2>
       <div class="slide-area">
@@ -385,7 +378,7 @@
           <li>
             <img src="./src/img/visual/visual02.png"
               alt="2020 국립해양박물관 기획전시 바다에서 바라본 '제주바당' 2020.04.28-2020.07.05 공동 주최:국립해양박물관, 국립제주박물관, 제주대학교 박물관"><a
-              href=" #"></a></li>
+              href="#"></a></li>
           <li>
             <img src="./src/img/visual/visual03.jpg" alt="">
             <div class="text-area">
@@ -426,6 +419,11 @@
           <li><a href="#">05</a></li>
           <li><a href="#">06</a></li>
         </ul>
+      </div>
+
+      <div class="btn-scroll-down">
+        <p>SCROLL DOWN</p>
+        <i class="fas fa-chevron-circle-down"></i>
       </div>
     </section>
 
@@ -481,14 +479,18 @@
         <li>03</li>
         <li>04</li>
       </ul>
+
+      <div class="btn-scroll-down">
+        <p>SCROLL DOWN</p>
+        <i class="fas fa-chevron-circle-down"></i>
+      </div>
     </section>
 
     <section class="online-edu" id="edu">
       <div class="slide-area">
         <ul class="content">
           <li>
-            <div class="left">
-            </div>
+            <div class="left"></div>
             <div class="right">
               <p class="type">교육</p>
               <p class="title">온라인 교육자료실</p>
@@ -497,9 +499,7 @@
             </div>
           </li>
           <li>
-            <div class="left">
-              <img src="" alt="">
-            </div>
+            <div class="left"></div>
             <div class="right">
               <p class="type">교육</p>
               <p class="title">어린이 박물관</p>
@@ -513,6 +513,11 @@
         <li class="on">01</li>
         <li>02</li>
       </ul>
+
+      <div class="btn-scroll-down">
+        <p>SCROLL DOWN</p>
+        <i class="fas fa-chevron-circle-down"></i>
+      </div>
     </section>
 
     <section class="have-item" id="item">
@@ -551,6 +556,11 @@
         </div>
       </div>
       <a class="button" href="#">소장품 더보기</a>
+      </div>
+
+      <div class="btn-scroll-down">
+        <p>SCROLL DOWN</p>
+        <i class="fas fa-chevron-circle-down"></i>
       </div>
     </section>
 
@@ -733,22 +743,38 @@
         <div class="right">
           <article class="popup">
             <h3>팝업</h3>
-            <ul class="content">
-              <li class="on"><a href="#"><img src="./src/img/popup/popup01.jpg" alt=""></a></li>
-              <li><a href="#"><img src="./src/img/popup/popup02.jpg" alt=""></a></li>
-              <li><a href="#"><img src="./src/img/popup/popup03.jpg" alt=""></a></li>
-              <li><a href="#"><img src="./src/img/popup/popup04.jpg" alt=""></a></li>
-              <li><a href="#"><img src="./src/img/popup/popup05.gif" alt=""></a></li>
-              <li><a href="#"><img src="./src/img/popup/popup06.gif" alt=""></a></li>
-            </ul>
-            <ul class="listNum">
-              <li class="on"></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-            </ul>
+            <div class="img-slide">
+              <div class="box">
+                <ul class="slide">
+                  <li class="on">
+                    <a href="#">
+                      <img src="./src/img/popup/popup01.jpg"
+                        alt="바다 주제 나의 생각 뽐내기 '바다'를 주제로 여러분의 사진이나 글, 그림을 올려주세요. 선정되신 분께는 멋진 선물을 드립니다! 이벤트 기간: 2020년 6월 1일(월)부터 6월 30일(화)">
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#"><img src="./src/img/popup/popup02.jpg" alt="생활 속 거리두고 온라인 뮤지엄 click 국립해양박물관 스토리"></a>
+                  </li>
+                  <li>
+                    <a href="#"><img src="./src/img/popup/popup03.jpg" alt="온라인 교육 자료실"></a>
+                  </li>
+                  <li>
+                    <a href="#"><img src="./src/img/popup/popup04.jpg"
+                        alt="코로나19 생활 속 거리두기 수칙 5가지 핵심수칙 1. 아프면 3~4일 집에 머물기 2. 사람과 사람 사이, 두 팔 간격 건강 거리 두기 3. 30초 손 씻기, 기침은 옷소매 4. 매일 2번 이상 환기, 주기적 소독 5. 거리는 멀어져도 마음은 가까이 주최:보건복지부"></a>
+                  </li>
+                  <li>
+                    <a href="#"><img src="./src/img/popup/popup05.gif"
+                        alt="개인정보보호위원회 너와 내가 지키는 작은 약속 2020 개인정보보호 안심주간 캠페인 주최:개인정보보호위원회"></a>
+                  </li>
+                  <li>
+                    <a href="#"><img src="./src/img/popup/popup06.gif"
+                        alt="오늘의 기록, 미래의 역사를 만듭니다. 법정기념일 지정 원년 2020년 기록의 날 기념식 및 학술회의: 2020년 6월 9일 화요일 14:00~17:30 (국가기록원 youtube, 페이스북 실시간 중계) 기록주간 Archives Week 2020년 6월 8일부터 6월 14일까지 (국가기록원 및 각급 기관 기록 관련 프로그램 운영)"></a>
+                  </li>
+                </ul>
+                <ul class="indicator">
+                </ul>
+              </div>
+            </div>
           </article>
           <article class="photo-gallery">
             <h3>포토갤러리</h3>
@@ -774,6 +800,11 @@
             </ul>
           </article>
         </div>
+      </div>
+
+      <div class="btn-scroll-down">
+        <p>SCROLL DOWN</p>
+        <i class="fas fa-chevron-circle-down"></i>
       </div>
     </section>
 
@@ -825,6 +856,11 @@
         <a class="button" href="#">해양도서관</a>
         <a class="button" href="#">어린이박물관</a>
         <a class="button" href="#">관람 사전 예약</a>
+      </div>
+
+      <div class="btn-scroll-down">
+        <p>SCROLL DOWN</p>
+        <i class="fas fa-chevron-circle-down"></i>
       </div>
     </section>
   </main>
