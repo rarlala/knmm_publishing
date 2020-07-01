@@ -1,19 +1,20 @@
-$(function () {
+$(function() {
   preventDefaultAnchor();
+
   function preventDefaultAnchor() {
-    $(document).on('click', 'a[href="#"]', function (e) {
+    $(document).on('click', 'a[href="#"]', function(e) {
       e.preventDefault();
     });
   }
 
   // left-menu-bar follow 버튼
-  $('.left-menu-bar .follow').on('click', function () {
+  $('.left-menu-bar .follow').on('click', function() {
     $('.left-menu-bar .follow-container').fadeToggle('hidden');
     $('.left-menu-bar .follow').toggleClass('active');
   });
 
   // left-menu-bar site map
-  $('.left-menu-bar .menu-btn').on('click', function () {
+  $('.left-menu-bar .menu-btn').on('click', function() {
     $(this).addClass('on');
     $(this).parent().find('.site-map').css({
       transition: 'all 1s',
@@ -22,7 +23,7 @@ $(function () {
     });
   });
 
-  $('.left-menu-bar .site-map .btn-siteMapClose').on('click', function () {
+  $('.left-menu-bar .site-map .btn-siteMapClose').on('click', function() {
     $('.left-menu-bar .menu-btn').removeClass('on');
     $('.left-menu-bar .site-map').css({
       display: 'none',
@@ -31,7 +32,7 @@ $(function () {
   });
 
   // page-indicator click 시 이동
-  $('#page-indicator li').on('click', function () {
+  $('#page-indicator li').on('click', function() {
     var target = $(this).find('a').attr('href'),
       index = $(this).index();
 
@@ -46,8 +47,7 @@ $(function () {
 
     $('html, body')
       .stop(true)
-      .animate(
-        {
+      .animate({
           scrollTop: $(target).offset().top,
         },
         'slow',
@@ -65,6 +65,7 @@ $(function () {
 
   // fade in fade out slide -> visual-slide 해당
   fadeInSlide();
+
   function fadeInSlide() {
     var slideLength = $('.visual-slide .slide-area ul li').length;
     var slideNext = 0;
@@ -103,10 +104,11 @@ $(function () {
 
   ltrSlide($('.plan'));
   ltrSlide($('.online-edu'));
+
   function ltrSlide(select) {
     $(select)
       .find('.listNum li')
-      .on('click', function () {
+      .on('click', function() {
         var index = $(this).index();
         slide(index);
       });
@@ -127,11 +129,12 @@ $(function () {
 
   // swipe slide -> popup 해당
   swipeSlide($('.popup .img-slide .box .slide li'));
+
   function swipeSlide(liSelector) {
     var slideNum = liSelector.length;
     var width = slideNum * 100;
 
-    $('.popup .img-slide .box ul li').each(function (i) {
+    $('.popup .img-slide .box ul li').each(function(i) {
       $('.popup .indicator').append(`<li class=${i + 1}></li>`);
       $('.popup .indicator li.1').addClass('on');
     });
@@ -140,7 +143,7 @@ $(function () {
       width: `${width}%`,
     });
 
-    $('.popup .indicator li').on('click', function () {
+    $('.popup .indicator li').on('click', function() {
       $('.popup .indicator li').removeClass('on');
       $(this).addClass('on');
       var index = $('.popup .indicator li').index(this);
@@ -150,94 +153,119 @@ $(function () {
       });
     });
   }
-  //scroll에 따른 화면 이동
-  var viewHeight = $(window).height(),
-    footerHeight = $('footer').height(),
-    scrollNum = 0,
-    scrollAmt = 0;
 
-  $(window).bind('mousewheel', function (event) {
-    scrollAmt = $(document).scrollTop();
+  // parallex
+  setParallex('.scroll-page');
 
-    $('#main section').each(function (i) {
-      var minScroll = $(this).offset().top - $(window).height() / 2;
-      var maxScroll = $(this).offset().top + $(window).height() / 2;
-      console.log(i + 1 + '번 페이지 : ' + minScroll + '~' + maxScroll);
+  function setParallex(selector) {
+    var numPage = $(selector).length;
+    var pageNow = 0;
+    var pagePrev = 0;
+    var pageNext = 0;
+    var eventScroll = ('onmousewheel' in window) ? 'mousewheel' : 'DOMMouseScroll';
+    var onAnimation = false;
+    var footerScroll = 0;
 
-      if (minScroll <= scrollAmt && scrollAmt < maxScroll) {
-        var n = i + 1;
-        $('#page-indicator li').removeClass('active');
-        $('#page-indicator li')
-          .eq(n - 1)
-          .addClass('active');
-      }
+    $('#page-indicator li a').on('click', function() {
+      var index = $('#page-indicator li').index($(this).parent());
+      showPage(index + 1);
     });
 
-    if (event.originalEvent.wheelDelta >= 0) {
-      if (scrollNum > 5) {
-        scrollNum -= 1;
-        $('html, body')
-          .stop(true)
-          .animate(
-            {
-              scrollTop: scrollAmt - footerHeight,
-            },
-            1000
-          );
-      } else if (scrollNum > 0) {
-        scrollNum -= 1;
-        $('html, body')
-          .stop(true)
-          .animate(
-            {
-              scrollTop: scrollAmt - viewHeight,
-            },
-            1000
-          );
+    checkScroll();
+    window.addEventListener(eventScroll, function(e) {
+      e.preventDefault();
+      if (onAnimation === true) return false;
+      onAnimation = true;
+      var delta = 0;
+      if (eventScroll === 'mousewheel') {
+        delta = e.wheelDelta / -120;
+      } else {
+        delta = e.detail / 3;
       }
-    } else {
-      if (scrollNum < 5) {
-        scrollNum += 1;
-        $('html, body')
-          .stop(true)
-          .animate(
-            {
-              scrollTop: scrollAmt + viewHeight,
-            },
-            1000
-          );
-      } else if (scrollNum < 6) {
-        scrollNum += 1;
-        $('html, body')
-          .stop(true)
-          .animate(
-            {
-              scrollTop: scrollAmt + footerHeight,
-            },
-            1000
-          );
+
+      if (delta > 0) {
+        showPage(pageNext);
+      } else if (delta < 0) {
+        if (pageNow === 6 && footerScroll !== 1) {
+          pagePrev = 6;
+          footerScroll += 1;
+          showPage(pagePrev);
+        } else {
+          showPage(pagePrev);
+          footerScroll = 0;
+        }
       }
+    }, {
+      passive: false
+    });
+
+    $(window).on('scroll resize', function() {
+      checkScroll();
+    });
+
+    function checkScroll() {
+      var scrollTop = $(document).scrollTop();
+      console.log('pagePrev', pagePrev, 'pageNow', pageNow, 'pageNext', pageNext, 'numPage', numPage);
+
+      $(selector).each(function(i) {
+        var minScroll = $(this).offset().top - $(window).height() / 2;
+        var maxScroll = $(this).offset().top + $(window).height() / 2;
+        if (scrollTop > minScroll && scrollTop <= maxScroll) {
+          var n = i + 1;
+
+          $(selector).removeClass('show');
+          $(selector).eq(n - 1).addClass('show');
+          $('#page-indicator li').removeClass('active');
+          if (n === 1) {
+            $('#page-indicator li').eq(5).addClass('active');
+          } else {
+            $('#page-indicator li').eq(n - 2).addClass('active');
+          }
+
+          pageNow = n;
+          pagePrev = (n - 1) < 1 ? 1 : n - 1;
+          pageNext = (n + 1) >= numPage + 1 ? numPage + 1 : n + 1;
+
+          $('header').css({
+            background: 'transparent',
+          });
+
+          if (n === 1 || n === 6) {
+            $('header').removeClass('active');
+            $('.left-menu-bar').removeClass('active');
+            $('#page-indicator').removeClass('black');
+          } else if (n === 7) {
+            $('header').css({
+              background: 'rgba(0,0,0,0.5)',
+            });
+          } else {
+            $('header').addClass('active');
+            $('.left-menu-bar').addClass('active');
+            $('#page-indicator').addClass('black');
+
+          }
+        }
+      })
     }
 
-    //scroll에 따른 header 색상 변경
-    if (scrollNum >= 5 || scrollNum === 0) {
-      $('header').removeClass('active');
-      $('.left-menu-bar').removeClass('active');
-      $('#page-indicator').removeClass('black');
-
-      if (scrollNum === 6) {
-        $('header').css({
-          background: 'rgba(0,0,0,0.5)',
+    function showPage(n) {
+      if (n <= numPage) {
+        var scrollAmt = $(selector + ':eq(' + (n - 1) + ')').offset().top;
+        $('html, body').stop(true).animate({
+          'scrollTop': scrollAmt + 'px'
+        }, 500, function() {
+          onAnimation = false;
         });
       } else {
-        $('header').css({
-          background: 'transparent',
+        var scrollAmt = $(selector + ':eq(' + (numPage - 1) + ')').offset().top;
+        var footerHeight = $('footer').height();
+
+        $('html, body').stop(true).animate({
+          'scrollTop': scrollAmt + footerHeight + 'px'
+        }, 500, function() {
+          onAnimation = false;
         });
       }
-    } else if (scrollNum > 0) {
-      $('header').addClass('active');
-      $('.left-menu-bar').addClass('active');
-      $('#page-indicator').addClass('black');
     }
-  });
+  }
 });
