@@ -1,0 +1,437 @@
+/* header */
+
+header {
+  position: relative;
+  top: 0;
+  margin: 0;
+  width: 100%;
+  height: 600px;
+}
+
+header::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  background: url('../img/sub_visual01.jpg') no-repeat;
+  background-position: 40% 50%;
+  background-size: 140%;
+  width: 100%;
+  height: 600px;
+  z-index: -1;
+  transition: background 2s;
+}
+
+header.on::after {
+  background-position-y: 80%;
+}
+
+header h1.logo {
+  position: absolute;
+  top: 30px;
+  left: 140px;
+  margin: 0;
+}
+
+header .gnb {
+  bottom: none;
+  top: 50px;
+  right: 60px;
+}
+
+header .tnb {
+  right: 100px;
+}
+
+header .search {
+  right: 60px;
+}
+
+header .left-menu-bar {
+  position: absolute;
+}
+
+header .left-menu-bar .follow,
+.left-menu-bar .follow-container {
+  bottom: 0;
+}
+
+header .header-content {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+  color: #fff;
+}
+
+header .header-content h2 {
+  font-size: 54px;
+  margin-bottom: 20px;
+}
+
+header .header-content p {
+  color: #ccc;
+}
+
+header .bread-crumb {
+  position: absolute;
+  color: #fff;
+  overflow: hidden;
+  bottom: 120px;
+  right: 120px;
+}
+
+header .bread-crumb li {
+  border-bottom: 1px solid #ccc;
+  width: 90px;
+  float: left;
+  text-align: center;
+  padding: 10px;
+}
+
+header .bread-crumb li:first-child {
+  position: relative;
+}
+
+header .bread-crumb li:last-child {
+  border-bottom: 1px solid #fff;
+}
+
+header .bread-crumb li:first-child::after {
+  content: '';
+  position: absolute;
+  background: url('../img/information/ic_home.png') no-repeat center;
+  width: 14px;
+  height: 16px;
+}
+
+/* header nav.page-nav {
+  position: absolute;
+  bottom: -30px;
+  width: 100%;
+  height: 80px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+header nav.page-nav>ul {
+  height: 50px;
+}
+
+header nav.page-nav>ul>li {
+  position: relative;
+  float: left;
+  left: 28%;
+  line-height: 50px;
+  background: pink;
+  width: 100px;
+}
+
+header nav.page-nav>ul>li>ul {
+  position: absolute;
+  top: 0;
+  left: 0;
+  line-height: 30px;
+}
+
+header nav.page-nav>ul>li>ul>li {
+  background: blue;
+  float: left;
+} */
+
+
+/* main common */
+
+#main .inner {
+  position: relative;
+  width: 1300px;
+  margin: 0 auto;
+}
+
+#main .title {
+  font-weight: 500;
+  font-size: 24px;
+}
+
+#main .info-start .inner .text {
+  font-weight: 200;
+  font-size: 18px;
+}
+
+#main section:nth-child(2n+1) {
+  background: #f2f2f2;
+}
+
+#main section {
+  box-sizing: border-box;
+  padding: 80px 0;
+}
+
+#main section+section .left {
+  position: relative;
+  float: left;
+  width: 30%;
+}
+
+#main section+section .left .title::after {
+  content: '';
+  width: 170px;
+  height: 2.5px;
+  background: #000;
+  position: absolute;
+  bottom: 20px;
+  right: 70px;
+}
+
+#main .right {
+  float: left;
+  width: 70%;
+  background: orange;
+}
+
+table {
+  background: #fff;
+}
+
+table tr {
+  height: 50px;
+}
+
+table th,
+table td {
+  border: 1px solid #ccc;
+}
+
+/* info-start */
+
+.info-start {
+  height: 220px;
+}
+
+#main .info-start .inner .title {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+#main .info-start .inner .text {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.info-start .etc {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  font-size: 14px;
+}
+
+.info-start .etc a {
+  position: relative;
+  padding-left: 20px;
+}
+
+.info-start .etc a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+}
+
+.info-start .etc .print::before {
+  background: url('../img/information/ic_share1.svg') no-repeat center;
+}
+
+.info-start .etc .share::before {
+  background: url('../img/information/ic_share2.svg') no-repeat center;
+}
+
+.info-start .etc .favorite::before {
+  background: url('../img/information/ic_share3.svg') no-repeat center;
+}
+
+/* time */
+
+.time {
+  height: 430px;
+}
+
+.time .right {
+  overflow: hidden;
+}
+
+.time .right .time-list {
+  float: left;
+  width: 28%;
+  height: 250px;
+  box-sizing: border-box;
+  padding: 10px 20px;
+}
+
+.time .right .time-list+.time-list {
+  margin-left: 4%;
+}
+
+.time .right .time-list {
+  border: 1px solid #ccc;
+  border-top: 1px solid #000;
+}
+
+.time .right .time-list .time-list-title {
+  position: relative;
+  padding: 15px 0 15px 50px;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 20px;
+}
+
+.time .right .time-list .time-list-title::before {
+  position: absolute;
+  left: 0;
+  content: '';
+  width: 25px;
+  height: 25px;
+}
+
+.time .right .time-list:first-child .time-list-title::before {
+  background: url('../img/information/time_icon_1.png') no-repeat center;
+}
+
+.time .right .time-list:nth-child(2) .time-list-title::before {
+  background: url('../img/information/time_icon_2.png') no-repeat center;
+}
+
+.time .right .time-list:nth-child(3) .time-list-title::before {
+  background: url('../img/information/time_icon_3.png') no-repeat center;
+  width: 21px;
+  height: 27px;
+}
+
+.time .right .time-list .list-text {
+  text-align: center;
+}
+
+.time .right .time-list .list-text+.list-text {
+  padding-top: 10px;
+}
+
+/* move */
+
+.move {
+  background: pink;
+  overflow: hidden;
+}
+
+.move .right .text {
+  margin-bottom: 20px;
+}
+
+.move .right .list-container {
+  width: 100%;
+  height: 100%;
+}
+
+.move .right .move-img {
+  display: block;
+  margin-bottom: 30px;
+}
+
+.move .right .list-container .tab-list {
+  border-bottom: 1px solid #000;
+  overflow: hidden;
+}
+
+.move .right .tab-list li {
+  float: left;
+  box-sizing: border-box;
+  width: 100px;
+  padding: 10px;
+  border: 1px solid #000;
+  text-align: center;
+}
+
+.move .right ul.tab-list li:nth-of-type(2) {
+  left: 100px;
+}
+
+.move .right ul.tab-list li:nth-of-type(3) {
+  left: 200px;
+}
+
+.move .right ul.tab-list li:nth-of-type(4) {
+  left: 300px;
+}
+
+.move .right ul.tab-list li:nth-of-type(5) {
+  left: 400px;
+}
+
+.move .right ul.tab-list li.on,
+.move .right ul.tab-list li:hover {
+  background: #000;
+  color: #fff;
+}
+
+.move .right .img-list {
+  position: relative;
+  background: green;
+  border: 1px solid #ccc;
+  overflow: hidden;
+}
+
+.move .right .img-list li {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0 auto;
+}
+
+.move .right .img-list li.on {
+  position: relative;
+  left: 50%;
+  margin: 0 auto;
+}
+
+.move .right .img-list li img {
+  display: block;
+}
+
+/* voice */
+.voice {
+  height: 400px;
+}
+
+.voice table {
+  margin-top: 30px;
+  width: 100%;
+}
+
+/* facilities */
+
+.facilities {
+  height: 400px;
+}
+
+.facilities .table-area {
+  width: 100%;
+  overflow: hidden;
+  margin-top: 30px;
+}
+
+.facilities .table-area table {
+  float: left;
+  width: 65%;
+}
+
+.facilities .table-area .img-box {
+  float: right;
+  width: 35%;
+}
+
+.facilities .table-area .img-box img {
+  display: block;
+  float: right;
+}
+
+/* notice */
+
+.notice {}
