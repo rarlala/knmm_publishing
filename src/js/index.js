@@ -1,13 +1,4 @@
-$(function () {
-  preventDefaultAnchor();
-
-  function preventDefaultAnchor() {
-    $(document).on('click', 'a[href="#"]', function (e) {
-      e.preventDefault();
-      $('a:hover').css({ cursor: 'pointer' });
-    });
-  }
-
+$(function() {
   // parallex
   setParallex('.scroll-page');
 
@@ -20,19 +11,19 @@ $(function () {
     var onAnimation = false;
     var footerScroll = false;
 
-    $('#page-indicator li a').on('click', function () {
+    $('#page-indicator li a').on('click', function() {
       var index = $('#page-indicator li').index($(this).parent());
       showPage(index + 1);
     });
 
-    $('.btn-scroll-down').on('click', function () {
+    $('.btn-scroll-down').on('click', function() {
       showPage(pageNext);
     });
 
     checkScroll();
     window.addEventListener(
       eventScroll,
-      function (e) {
+      function(e) {
         e.preventDefault();
         if (onAnimation === true) return false;
         onAnimation = true;
@@ -57,20 +48,19 @@ $(function () {
             showPage(pagePrev);
           }
         }
-      },
-      {
+      }, {
         passive: false,
       }
     );
 
-    $(window).on('scroll resize', function () {
+    $(window).on('scroll resize', function() {
       checkScroll();
     });
 
     function checkScroll() {
       var scrollTop = $(document).scrollTop();
 
-      $(selector).each(function (i) {
+      $(selector).each(function(i) {
         var minScroll = $(this).offset().top - $(window).height() / 2;
         var maxScroll = $(this).offset().top + $(window).height() / 2;
         if (scrollTop > minScroll && scrollTop <= maxScroll) {
@@ -115,12 +105,11 @@ $(function () {
         var scrollAmt = $(selector + ':eq(' + (n - 1) + ')').offset().top;
         $('html, body')
           .stop(true)
-          .animate(
-            {
+          .animate({
               scrollTop: scrollAmt + 'px',
             },
             500,
-            function () {
+            function() {
               onAnimation = false;
             }
           );
@@ -130,12 +119,11 @@ $(function () {
 
         $('html, body')
           .stop(true)
-          .animate(
-            {
+          .animate({
               scrollTop: scrollAmt + footerHeight + 'px',
             },
             500,
-            function () {
+            function() {
               onAnimation = false;
             }
           );
@@ -143,41 +131,8 @@ $(function () {
     }
   }
 
-  // tnb language
-  $('.tnb .language').on('click', function () {
-    $(this)
-      .css({
-        transition: 'all 2s',
-      })
-      .toggleClass('on');
-  });
-
-  // left-menu-bar follow 버튼
-  $('.left-menu-bar .follow').on('click', function () {
-    $('.left-menu-bar .follow-container').fadeToggle('hidden');
-    $('.left-menu-bar .follow').toggleClass('active');
-  });
-
-  // left-menu-bar site map
-  $('.left-menu-bar .menu-btn').on('click', function () {
-    $(this).addClass('on');
-    $(this).parent().find('.site-map').css({
-      transition: 'all 1s',
-      display: 'block',
-      opacity: 1,
-    });
-  });
-
-  $('.left-menu-bar .site-map .btn-siteMapClose').on('click', function () {
-    $('.left-menu-bar .menu-btn').removeClass('on');
-    $('.left-menu-bar .site-map').css({
-      display: 'none',
-      opacity: 0,
-    });
-  });
-
   // page-indicator click 시 이동
-  $('#page-indicator li').on('click', function () {
+  $('#page-indicator li').on('click', function() {
     var target = $(this).find('a').attr('href'),
       index = $(this).index();
 
@@ -192,8 +147,7 @@ $(function () {
 
     $('html, body')
       .stop(true)
-      .animate(
-        {
+      .animate({
           scrollTop: $(target).offset().top,
         },
         'slow',
@@ -211,7 +165,7 @@ $(function () {
     var timerId = '';
     var speed = 5000;
 
-    timerId = setInterval(function () {
+    timerId = setInterval(function() {
       slideRepeat();
     }, speed);
 
@@ -221,13 +175,13 @@ $(function () {
       slide(slideNext);
     }
 
-    $('.visual-slide .slide-tab ul li').on('click', function () {
+    $('.visual-slide .slide-tab ul li').on('click', function() {
       clearInterval(timerId);
       var index = $(this).index();
       slideNext = index + 1;
       slide(index);
 
-      timerId = setInterval(function () {
+      timerId = setInterval(function() {
         slideRepeat();
       }, speed);
     });
@@ -247,7 +201,7 @@ $(function () {
   function ltrSlide(select) {
     $(select)
       .find('.listNum li')
-      .on('click', function () {
+      .on('click', function() {
         var index = $(this).index();
         slide(index);
       });
@@ -273,16 +227,16 @@ $(function () {
     var slideNum = liSelector.length;
     var width = slideNum * 100;
 
-    $('.popup .img-slide .box ul li').each(function (i) {
-      $('.popup .indicator').append(`<li class=${i + 1}></li>`);
-      $('.popup .indicator li.1').addClass('on');
+    $('.popup .img-slide .box ul li').each(function(i) {
+      $('.popup .indicator').append(`<li class=slide-img${i + 1}></li>`);
+      $('.popup .indicator li.slide-img1').addClass('on');
     });
 
     $('.popup .img-slide .box .slide').css({
       width: `${width}%`,
     });
 
-    $('.popup .indicator li').on('click', function () {
+    $('.popup .indicator li').on('click', function() {
       $('.popup .indicator li').removeClass('on');
       $(this).addClass('on');
       var index = $('.popup .indicator li').index(this);
@@ -296,8 +250,9 @@ $(function () {
   // alert board tab
 
   tabUI($('.board .tab-title'));
+
   function tabUI(selector) {
-    selector.on('click', function () {
+    selector.on('click', function() {
       selector.parent().removeClass('on');
       $(this).parent().addClass('on');
     });

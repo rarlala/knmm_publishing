@@ -1,0 +1,681 @@
+/* font */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Sans+KR:wght@300;400;500&display=swap');
+
+/* common css */
+
+.hidden {
+  display: none;
+}
+
+/* content css */
+
+body {
+  position: relative;
+  width: 100%;
+  font-family: 'Noto Sans KR', sans-serif;
+  overflow-x: hidden;
+}
+
+/* 본문 바로가기 */
+#skip-nav {
+  position: fixed;
+  left: 0;
+  top: -41px;
+  width: 100%;
+  line-height: 40px;
+  text-align: center;
+  font-size: 16px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #ffffff;
+  border-bottom: 1px solid #ffffff;
+  z-index: 10000;
+  transition: top 0.3s;
+}
+
+#skip-nav:focus {
+  top: 0;
+}
+
+/* header */
+
+header {
+  position: fixed;
+  width: 100%;
+  height: 90px;
+  margin-left: 90px;
+  z-index: 30;
+}
+
+header .logo {
+  width: 200px;
+  height: 35px;
+  margin: 30px 0 0 50px;
+  background: url('../img/header/logo.png') no-repeat top;
+  cursor: pointer;
+}
+
+header.active .logo {
+  background: url('../img/header/logo.png') no-repeat bottom;
+}
+
+header .gnb {
+  color: #fff;
+  position: absolute;
+  bottom: 10px;
+  right: 140px;
+  height: 30px;
+  white-space: nowrap;
+  overflow: hidden;
+  font-weight: 300;
+}
+
+header.active .gnb {
+  color: #000;
+}
+
+header .gnb li {
+  float: left;
+  font-size: 16px;
+}
+
+header .gnb li a {
+  position: relative;
+  padding-bottom: 3px;
+}
+
+header .gnb li a::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 0);
+  width: 0;
+  height: 1px;
+  background: #fff;
+  transition: width 0.3s;
+}
+
+header .gnb li:hover a::after,
+header .gnb li:focus a::after,
+header .gnb li a.on::after {
+  width: 100%;
+}
+
+header .gnb li+li {
+  margin-left: 30px;
+}
+
+header .tnb {
+  color: #fff;
+  position: absolute;
+  top: 10px;
+  right: 180px;
+}
+
+header.active .tnb {
+  color: #222;
+}
+
+header .tnb>li {
+  float: left;
+  opacity: 0.7;
+  font-size: 13px;
+}
+
+header .tnb>li a {
+  display: block;
+  padding: 5px 10px;
+}
+
+header .tnb>li+li {
+  margin-left: 10px;
+}
+
+header .tnb>li:nth-child(n+3) {
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+header.active .tnb>li:nth-child(n+3) {
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+header .tnb .language {
+  position: relative;
+}
+
+header .tnb .language .select-language-list {
+  position: absolute;
+  visibility: hidden;
+  top: 30px;
+  left: 0;
+  width: 94px;
+  border: 1px solid #222;
+  opacity: 0;
+  cursor: pointer;
+}
+
+header .tnb .language.on .select-language-list {
+  visibility: visible;
+  opacity: 1;
+  transition: all 1s;
+}
+
+header .tnb .language .select-language-list li {
+  padding: 5px 5px;
+  border-top: 1px solid #fff;
+  background: #fff;
+  color: #222;
+  font-size: 13px;
+}
+
+header .tnb .language .select-language-list li+li {
+  border-top: 1px solid #222;
+}
+
+header .search {
+  position: absolute;
+  top: 10px;
+  right: 140px;
+  height: 30px;
+  width: 30px;
+  background: rgba(255, 255, 255, 0.2);
+  opacity: 0.5;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+header.active .search {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+header .search::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: url('../img/header/ic_search.png') no-repeat center;
+  width: 14px;
+  height: 14px;
+}
+
+/* .left-menu-bar */
+
+.left-menu-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 90px;
+  height: 100%;
+  color: #fff;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  z-index: 30;
+}
+
+.left-menu-bar.active {
+  color: #222;
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.left-menu-bar .menu-btn {
+  position: relative;
+  width: 100%;
+  height: 90px;
+  background: rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+}
+
+.left-menu-bar .menu-btn span {
+  position: absolute;
+  top: 50%;
+  left: 30px;
+  width: 30px;
+  height: 1px;
+  background: #fff;
+}
+
+.left-menu-bar.active .menu-btn span {
+  background: #000;
+}
+
+.left-menu-bar .menu-btn span::before,
+.left-menu-bar .menu-btn span::after {
+  content: '';
+  position: absolute;
+  left: -5px;
+  width: 30px;
+  height: 1px;
+  background: #fff;
+  transition: all 0.5s;
+}
+
+.left-menu-bar.active .menu-btn span::before,
+.left-menu-bar.active .menu-btn span::after {
+  background: #000;
+}
+
+.left-menu-bar .menu-btn span::before {
+  top: -10px;
+  background: #fff;
+}
+
+.left-menu-bar .menu-btn span::after {
+  top: 10px;
+  background: #fff;
+}
+
+.left-menu-bar .menu-btn:hover span::before,
+.left-menu-bar .menu-btn:hover span::after,
+.left-menu-bar .menu-btn.on span::before,
+.left-menu-bar .menu-btn.on span::after {
+  left: 0;
+}
+
+.left-menu-bar .site-map {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.95);
+  z-index: 100;
+  overflow: hidden;
+  display: none;
+  opacity: 0;
+  transition: all 1s;
+}
+
+.left-menu-bar .site-map .box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 12px;
+  width: 80vw;
+}
+
+.left-menu-bar .site-map .logo {
+  background: url(../img/header/logo.png) no-repeat top;
+  width: 200px;
+  height: 38px;
+  margin-bottom: 30px;
+}
+
+.left-menu-bar .site-map .lists {
+  width: 80vw;
+}
+
+.left-menu-bar .site-map .lists .list {
+  float: left;
+  width: calc(80vw/7.52);
+  color: #fff;
+}
+
+.left-menu-bar .site-map .lists .list+.list {
+  margin-left: 11px;
+}
+
+.left-menu-bar .site-map .lists .list .tit {
+  display: block;
+  border-bottom: 2px solid rgba(160, 160, 160, 0.5);
+  text-align: center;
+  padding: 5px 0;
+  font-weight: bold;
+}
+
+.left-menu-bar .site-map .lists .list>ul>li {
+  padding: 5px 3px;
+  cursor: pointer;
+  font-size: 11px;
+}
+
+.left-menu-bar .site-map .lists .list>ul>li+li {
+  border-top: 1px dotted rgba(160, 160, 160, 0.5);
+}
+
+.left-menu-bar .site-map .lists .list>ul>li>ul>li {
+  position: relative;
+  color: #ccc;
+  padding-left: 10px;
+}
+
+.left-menu-bar .site-map .lists .list.knmm>ul>li>ul.sm-depth {
+  overflow: hidden;
+}
+
+.left-menu-bar .site-map .lists .list.knmm>ul>li>ul.sm-depth>li {
+  float: left;
+}
+
+.left-menu-bar .site-map .lists .list>ul>li>ul>li::before {
+  content: 'ㆍ';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  color: #fff;
+}
+
+.left-menu-bar .site-map .lists .bottom {
+  position: relative;
+  clear: both;
+  border-top: 1px solid rgba(160, 160, 160, 0.5);
+  padding-top: 15px;
+  color: #fff;
+}
+
+.left-menu-bar .site-map .lists .bottom .sm-title {
+  position: relative;
+  float: left;
+  margin-right: 200px;
+}
+
+.left-menu-bar .site-map .lists .bottom .sm-title::after {
+  position: absolute;
+  top: 50%;
+  content: '';
+  width: 160px;
+  height: 2px;
+  margin: 0 20px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.left-menu-bar .site-map .lists .bottom ul li {
+  float: left;
+  margin: 0 5px;
+}
+
+.left-menu-bar .site-map .lists .bottom .btn-group {
+  position: absolute;
+  top: 50%;
+  right: 0;
+}
+
+.left-menu-bar .site-map .lists .bottom .btn-group button {
+  padding: 2px 10px;
+  font-size: 12px;
+}
+
+.left-menu-bar .site-map .lists .bottom .btn-group button.btn-login {
+  border: 1px solid #fff;
+  background: #000;
+  color: #fff;
+}
+
+.left-menu-bar .site-map .btn-siteMapClose {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: url('../img/header/ic_close.png') no-repeat center;
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+}
+
+.left-menu-bar .follow,
+.left-menu-bar .journal {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  line-height: 90px;
+  text-align: center;
+  white-space: nowrap;
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+  z-index: 10;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  font-weight: 600;
+}
+
+.left-menu-bar.active .follow,
+.left-menu-bar.active .journal {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.left-menu-bar .follow {
+  position: absolute;
+  bottom: 40%;
+  height: 160px;
+  padding-bottom: 20px;
+  letter-spacing: -1px;
+}
+
+.left-menu-bar .journal {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+}
+
+.left-menu-bar .follow span::after {
+  content: '';
+  position: absolute;
+  left: 30px;
+  bottom: 13px;
+  background: url('../img/header/cicon.svg') no-repeat center/cover;
+  width: 28px;
+  height: 28px;
+  line-height: 90px;
+  transition: all 0.3s;
+  opacity: 0.6;
+}
+
+.left-menu-bar.active .follow span::after {
+  background: url('../img/header/cicon_b.svg') no-repeat center/cover;
+}
+
+.left-menu-bar .follow:hover span::after,
+.left-menu-bar .follow.active span::after {
+  transform: rotate(45deg);
+  opacity: 1;
+}
+
+.left-menu-bar .follow-container {
+  position: absolute;
+  bottom: 40%;
+  left: 0;
+  box-sizing: border-box;
+  width: 100vw;
+  height: 180px;
+  background: #222;
+  padding: 20px 0 0 90px;
+}
+
+.left-menu-bar .follow-container {
+  font-weight: bold;
+  letter-spacing: -1px;
+  font-size: 14px;
+}
+
+.left-menu-bar .follow-container .sns {
+  float: left;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 5%;
+  width: 20%;
+}
+
+.left-menu-bar .follow-container .title {
+  margin-right: 30px;
+  line-height: 40px;
+}
+
+.left-menu-bar .follow-container .sns li {
+  float: left;
+  margin-right: 10px;
+}
+
+.left-menu-bar .follow-container .sns ul {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.left-menu-bar .follow-container .mailing-service {
+  float: left;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 60%;
+  margin-left: 2%;
+}
+
+.left-menu-bar .follow-container .mailing-service input,
+.left-menu-bar .follow-container .mailing-service button,
+.left-menu-bar .follow-container .mailing-service .checkbox-container {
+  height: 38px;
+  border: none;
+}
+
+.left-menu-bar .follow-container .mailing-service input[type=email] {
+  padding-left: 5px;
+  width: 220px;
+}
+
+.left-menu-bar .follow-container .mailing-service button {
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+}
+
+.left-menu-bar .follow-container form,
+.left-menu-bar .follow-container .checkbox-container {
+  display: inline-block;
+}
+
+.left-menu-bar .follow-container .checkbox-container {
+  position: relative;
+  box-sizing: border-box;
+  background: #ccc;
+  height: 38px;
+  vertical-align: middle;
+  padding: 7px 10px 0 50px;
+  color: #000;
+  font-weight: 400;
+}
+
+.left-menu-bar .follow-container .checkbox-container input[type=checkbox] {
+  position: absolute;
+  left: 20px;
+  top: 7px;
+  width: 18px;
+  height: 18px;
+}
+
+.left-menu-bar .follow-container .checkbox-container a {
+  margin-left: 20px;
+  padding-bottom: 1px;
+  border-bottom: 1px solid #000000;
+}
+
+/* footer */
+
+footer .top {
+  border-bottom: 1px solid #ccc;
+}
+
+footer .inner {
+  width: 85%;
+  margin: 0 auto;
+}
+
+footer .top ul {
+  overflow: hidden;
+}
+
+footer .top li {
+  float: left;
+  width: 14.2%;
+  padding: 30px 0;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+footer .bottom {
+  padding: 50px 0 30px;
+  overflow: hidden;
+}
+
+footer .bottom .left {
+  float: left;
+  color: #222;
+  font-weight: 100;
+  width: 45%;
+  margin-top: 10px;
+}
+
+footer .bottom .left address {
+  position: relative;
+  display: inline;
+  margin-right: 10px;
+}
+
+footer .bottom .left address::after {
+  position: absolute;
+  right: -5px;
+  content: '|';
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 14px;
+}
+
+footer .bottom .right {
+  position: relative;
+  right: -50px;
+  float: right;
+  color: #222;
+  font-weight: 100;
+  width: 55%;
+}
+
+footer .bottom .right li {
+  position: relative;
+  float: left;
+}
+
+footer .bottom .right .select-box-area li+li {
+  margin-left: 10px;
+}
+
+footer .bottom .right .select-box-area,
+footer .bottom .right .etc-menu {
+  overflow: hidden;
+  width: 100%;
+}
+
+footer .bottom .right .select-box-area li {
+  float: left;
+  width: 30%;
+  margin-bottom: 10px;
+}
+
+footer .bottom .right .select-box-area li select {
+  width: 100%;
+  padding: 5px;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+footer .bottom .right .etc-menu li {
+  font-size: 14px;
+}
+
+footer .bottom .right .etc-menu li+li {
+  margin-left: 10px;
+}
+
+footer .bottom .right .etc-menu li::before {
+  position: absolute;
+  right: -5px;
+  content: '|';
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 12px;
+}
+
+footer .bottom .right li:last-child:before {
+  content: '';
+}
+
+footer .bottom .left .copy {
+  color: rgba(0, 0, 0, 0.4);
+  font-size: 12px;
+}
