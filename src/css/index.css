@@ -869,7 +869,6 @@ header .search::after {
   width: calc(69% - 90px);
   height: 85%;
   left: -50px;
-  background: red;
 }
 
 .plan .content li:nth-child(1) .right {
@@ -877,7 +876,7 @@ header .search::after {
 }
 
 .plan .content li:nth-child(2) .right {
-  background: url(../img/plan/plan02.jpg) no-repeat left/contain;
+  background: url(../img/plan/plan02.jpg) no-repeat top/contain;
 }
 
 .plan .content li:nth-child(3) .right {
@@ -1067,7 +1066,7 @@ header .search::after {
 
 .have-item .inner {
   box-sizing: border-box;
-  width: 80%;
+  width: 1300px;
   height: 85vh;
   margin: 40px auto 5px;
   overflow: hidden;
@@ -1132,9 +1131,10 @@ header .search::after {
 
 .alert .inner,
 .info .inner {
-  width: 80%;
+  width: 1300px;
+  height: 80%;
   padding: 5% 0 0;
-  margin: 0 auto;
+  margin: 40px auto 5px;
   overflow: hidden;
   text-align: left;
 }
@@ -1144,27 +1144,32 @@ header .search::after {
   font-weight: 500;
 }
 
-.alert .left,
-.alert .right,
-.info .left,
-.info .right {
-  float: left;
-  width: 45.7%;
+.alert .first-line {
+  height: 60%;
 }
 
-.alert .left,
-.info .left {
-  margin-right: 7%;
+.alert .second-line {
+  height: 40%;
 }
 
-.alert .right {
+.alert div {
+  width: 100%;
   overflow: hidden;
+}
+
+.alert div>article {
+  width: 46%;
+  float: left;
+}
+
+.alert div>article:first-child {
+  margin-right: 8%;
 }
 
 /* board */
 .alert .board {
   position: relative;
-  height: 340px;
+  height: 100%;
   margin-bottom: 15px;
 }
 
@@ -1284,11 +1289,12 @@ header .search::after {
 
 .alert .visual-news img {
   width: 80%;
+  min-height: 160px;
 }
 
 .alert .photo-gallery img {
   width: 100%;
-  min-height: 110px;
+  min-height: 160px;
 }
 
 .alert .visual-news .text,
@@ -1304,11 +1310,12 @@ header .search::after {
 .popup {
   position: relative;
   margin-bottom: 10px;
-  width: 467.5px;
+  width: 100%;
+  height: 100%;
 }
 
 .popup .img-slide {
-  height: 310px;
+  width: 100%;
   overflow: hidden;
   left: 0;
 }
@@ -1326,7 +1333,7 @@ header .search::after {
 
 .popup .img-slide .slide li img {
   display: block;
-  width: 467.5px;
+  width: 598px;
 }
 
 .popup .indicator {
@@ -1378,7 +1385,28 @@ header .search::after {
 }
 
 .info .inner {
-  margin-top: 40px;
+  width: 1300px;
+  margin: 40px auto 0;
+}
+
+.info .left,
+.info .right {
+  float: left;
+  width: 45.7%;
+}
+
+.info .inner .left,
+.info .inner .right {
+  height: 100%;
+}
+
+.info .inner .left {
+  margin-right: 7%;
+}
+
+.info .inner .left>div,
+.info .inner .right>div {
+  height: 40%;
 }
 
 .info .title {
@@ -1389,10 +1417,6 @@ header .search::after {
   padding-left: 40px;
   margin-bottom: 20px;
   font-size: 18px;
-}
-
-.info .inner div div:first-child {
-  height: 260px;
 }
 
 .info .title::before {
