@@ -26,7 +26,7 @@ $(function() {
   });
 
   // left-menu-bar site map
-  $('.left-menu-bar .menu-btn').on('click', function() {
+  $('.left-menu-bar .menu-btn').on('click focus', function() {
     $(this).addClass('on');
     $(this).parent().find('.site-map').css({
       transition: 'all 1s',
