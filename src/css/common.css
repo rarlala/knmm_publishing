@@ -2,19 +2,19 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Sans+KR:wght@300;400;500&display=swap');
 
-/* common css */
-
 .hidden {
   display: none;
 }
 
-/* content css */
+.wrapper {
+  min-width: 1200px;
+  margin: 0 auto;
+}
 
 body {
   position: relative;
   width: 100%;
   font-family: 'Noto Sans KR', sans-serif;
-  overflow-x: hidden;
 }
 
 /* 본문 바로가기 */
@@ -469,6 +469,10 @@ header .search::after {
 
 .left-menu-bar.active .follow span::after {
   background: url('../img/header/cicon_b.svg') no-repeat center/cover;
+}
+
+.left-menu-bar.active .follow.active span::after {
+  background: url('../img/header/cicon.svg') no-repeat center/cover;
 }
 
 .left-menu-bar .follow:hover span::after,
