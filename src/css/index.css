@@ -146,31 +146,31 @@ body::-webkit-scrollbar {
   display: block;
   width: 100vw;
   height: 100vh;
-  opacity: 0.5;
-  transition: opacity 0.5s;
+  opacity: 0;
+  transition: opacity 1s;
 }
 
-.visual-slide .slide-area li:nth-child(1).on .slide-img {
+.visual-slide .slide-area li:nth-child(1) .slide-img {
   background: url('../img/visual/visual01.png') no-repeat center/ cover;
 }
 
-.visual-slide .slide-area li:nth-child(2).on .slide-img {
+.visual-slide .slide-area li:nth-child(2) .slide-img {
   background: url('../img/visual/visual02.png') no-repeat center/ cover;
 }
 
-.visual-slide .slide-area li:nth-child(3).on .slide-img {
+.visual-slide .slide-area li:nth-child(3) .slide-img {
   background: url('../img/visual/visual03.jpg') no-repeat center/ cover;
 }
 
-.visual-slide .slide-area li:nth-child(4).on .slide-img {
+.visual-slide .slide-area li:nth-child(4) .slide-img {
   background: url('../img/visual/visual04.jpg') no-repeat center/ cover;
 }
 
-.visual-slide .slide-area li:nth-child(5).on .slide-img {
+.visual-slide .slide-area li:nth-child(5) .slide-img {
   background: url('../img/visual/visual05.jpg') no-repeat center/ cover;
 }
 
-.visual-slide .slide-area li:nth-child(6).on .slide-img {
+.visual-slide .slide-area li:nth-child(6) .slide-img {
   background: url('../img/visual/visual06.jpg') no-repeat center/ cover;
 }
 
